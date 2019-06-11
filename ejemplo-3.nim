@@ -1,1 +1,1 @@
-nombre  var =  readLine ( estandar )
+nombre  var = readLine(estandar)
