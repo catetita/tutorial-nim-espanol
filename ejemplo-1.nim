@@ -1,4 +1,4 @@
 # Este es un 
-eco de  comentario "¿Cual es tu nombre?" 
-Var  nombre :  string  =  readLine ( estandar ) 
-eco  "Hola" ,  nombre ,  "!"
+echo de comentario "¿Cual es tu nombre?" 
+var nombre :string = readLine(estandar) 
+echo "Hola" , nombre , "!"
