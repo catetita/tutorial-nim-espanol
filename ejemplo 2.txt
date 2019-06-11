@@ -1,0 +1,1 @@
+compilación nim - ejecutar saludos.nim
