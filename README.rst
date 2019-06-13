@@ -27,7 +27,8 @@ Literales de cuerdas y personajes
 * Los literales de cadena están encerrados entre comillas dobles; Literales de caracteres en comillas simples. Los caracteres especiales se escapan con \ : \ n significa nueva línea, \ t significa tabulador, etc. También hay literales de cadena en bruto 
 
 .. code-block:: nim
-    r"C:\program files\nim""
+
+ r"C:\program files\nim""
 
 
 * En literales crudos, la barra invertida no es un personaje de escape.
