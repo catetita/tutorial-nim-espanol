@@ -1,7 +1,7 @@
-![](img1.png)
-
 Tutorial de Nim (Parte I)
 =========
+
+![](img.png)
 
 Introducción
 --------------
