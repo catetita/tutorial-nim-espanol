@@ -15,6 +15,8 @@ Elementos léxicos
 --------------
 Veamos los elementos léxicos de Nim con más detalle: al igual que otros lenguajes de programación, Nim consta de literales (de cadena), identificadores, palabras clave, comentarios, operadores y otros signos de puntuación.
 
+``````r "C: \ archivos de programa \ nim"``````
+
 Literales de cuerdas y personajes
 --------------
 *Los literales de cadena están encerrados entre comillas dobles; Literales de caracteres en comillas simples. Los caracteres especiales se escapan con \ : \ n significa nueva línea, \ t significa tabulador, etc. También hay literales de cadena en bruto 
