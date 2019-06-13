@@ -1,7 +1,7 @@
 Tutorial de Nim (Parte I)
 =========
 
-![]([img.png](https://raw.githubusercontent.com/catetita/tutorial-nim-espanol/master/img.png))
+![](https://raw.githubusercontent.com/catetita/tutorial-nim-espanol/master/img.png)
 
 Introducción
 --------------
