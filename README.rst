@@ -11,12 +11,11 @@ El primer programa
 --------------
 Comenzamos el recorrido con un programa modificado "hola mundo":
 
-.. code-block:: nim
-    # This is a comment
+`` ` # This is a comment
     echo "What's your name? "
     var name: string = readLine(stdin)
     echo "Hi, ", name, "!" 
-
+`` `
 
 Elementos léxicos
 --------------
