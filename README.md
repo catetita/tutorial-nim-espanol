@@ -1,21 +1,25 @@
-There are two ways to define headers:
+Tutorial de Nim (Parte I)
+-----
 
-The biggest possible header
-===========================
+Introducción
+=======================
 
-# You can also use this markup
+#El primer programa
 
-(I prefer the first one as it's more readable when looking directly at the source code)
- 
-A sub heading
--------------
- 
-## This is the alternative format
+##Elementos léxicos
 
-### Then you can go smaller
+###Literales de cuerdas y personajes
 
-#### And smaller
+###Comentarios
 
-##### And even smaller
+###Números
 
-###### No, you can't go sm
+##La sentencia **var**
+
+##La declaración de asignación
+
+###Constantes
+
+##La declaración de *let*
+
+##Declaraciones de flujo de control
