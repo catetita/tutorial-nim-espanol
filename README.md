@@ -11,16 +11,17 @@ El primer programa
 --------------
 Comenzamos el recorrido con un programa modificado "hola mundo":
 
-````# Este es un 
+```# Este es un 
 echo de  comentario "¿Cual es tu nombre?" 
 var  nombre : string = readLine(estandar) 
-echo "Hola" , nombre , "!" ````
+echo "Hola" , nombre , "!" 
+```
 
 Elementos léxicos
 --------------
 Veamos los elementos léxicos de Nim con más detalle: al igual que otros lenguajes de programación, Nim consta de literales (de cadena), identificadores, palabras clave, comentarios, operadores y otros signos de puntuación.
 
-`````r "C: \ archivos de programa \ nim"`````
+```r "C: \ archivos de programa \ nim"```
 
 Literales de cuerdas y personajes
 --------------
