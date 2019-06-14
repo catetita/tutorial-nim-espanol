@@ -45,6 +45,7 @@ Los comentarios comienzan en cualquier lugar fuera de una cadena o literal de ca
  # A comment.
  var myVariable: int ## a documentation comment
 
+
 Los comentarios de documentación son tokens; solo se permiten en ciertos lugares en el archivo de entrada ya que pertenecen al árbol de sintaxis! Esta característica permite generadores de documentación más simples.
 
 Los comentarios de varias líneas se inician con # [ y terminan con ] # . Los comentarios multilínea también pueden ser anidados.
@@ -54,9 +55,9 @@ Los comentarios de varias líneas se inician con # [ y terminan con ] # . Los co
  #[
  You can have any Nim code text commented
  out inside this with no indentation restrictions.
-      yes("May I ask a pointless question?")
+     yes("May I ask a pointless question?")
   #[
-     Note: these can be nested!!
+    Note: these can be nested!!
   ]#
  ]#
 
@@ -66,7 +67,7 @@ También puede usar la declaración de descarte junto con literales de cadena la
 
  discard """ You can have any Nim code text commented
  out inside this with no indentation restrictions.
-      yes("May I ask a pointless question?") """
+    yes("May I ask a pointless question?") """
 
 Números
 --------------
