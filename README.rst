@@ -89,9 +89,9 @@ Indentation can be used after the var keyword to list a whole section of variabl
 .. code-block:: nim
 
  var
-  x, y: int
+  x, y :int
   # a comment can occur here too
-  a, b, c: string
+  a, b, c :string
 
 La declaración de asignación
 --------------
@@ -114,11 +114,45 @@ Puede declarar múltiples variables con una sola instrucción de asignación y t
  echo "x ", x  # outputs "x 42"
  echo "y ", y  # outputs "y 3"
 
+Tenga en cuenta que la declaración de múltiples variables con una sola asignación que llama a un procedimiento puede tener resultados inesperados: el compilador desenrollará las asignaciones y terminará llamando al procedimiento varias veces. Si el resultado del procedimiento depende de los efectos secundarios, ¡sus variables pueden terminar teniendo valores diferentes! Para seguridad, utilice procedimientos libres de efectos secundarios si realiza múltiples tareas.
+
 Constantes
 --------------
 
+Las constantes son símbolos que están vinculados a un valor. El valor de la constante no puede cambiar. El compilador debe poder evaluar la expresión en una declaración constante en tiempo de compilación:
+
+.. code-block:: nim
+
+ const x = "abc" # the constant x contains the string "abc"
+
+La sangría se puede usar después de la palabra clave const para enumerar una sección completa de constantes:
+
+.. code-block:: nim
+
+ const
+  x = 1
+  # a comment can occur here too
+  y = 2
+  z = y + 5 # computations are possible
+
 La declaración de *let*
 --------------
+La instrucción let funciona igual que la instrucción var , pero los símbolos declarados son variables de asignación única : después de la inicialización, su valor no puede cambiar:
 
+.. code-block:: nim
+
+ let x = "abc" # introduces a new variable `x` and binds a value to it
+ x = "xyz"     # Illegal: assignment to `x`
+
+La diferencia entre let y const es: permite introducir una variable que no se puede volver a asignar, const significa "imponer la evaluación del tiempo de compilación y colocarla en una sección de datos":
+
+.. code-block:: nim
+
+ const input = readLine(stdin) # Error: constant expression expected
+
+.. code-block:: nim
+
+ let input = readLine(stdin)   # works
+ 
 Declaraciones de flujo de control
 --------------
