@@ -58,14 +58,54 @@ Los comentarios de varias líneas se inician con # [ y terminan con ] # . Los co
   ]#
  ]#
 
+También puede usar la declaración de descarte junto con literales de cadena larga para crear comentarios de bloque:
+
+.. code-block:: nim
+ discard """ You can have any Nim code text commented
+ out inside this with no indentation restrictions.
+      yes("May I ask a pointless question?") """
+
 Números
 --------------
+Los literales numéricos se escriben como en la mayoría de los otros idiomas. Como un giro especial,
+se permiten guiones bajos para una mejor legibilidad: 1_000_000 (un millón). Un número que contiene un punto (o 'e' o 'E')
+es un literal de punto flotante: 1.0e9 (mil millones). Los literales hexadecimales están prefijados con 0x , 
+los literales binarios con 0b y los literales octales con 0o . Un cero inicial solo no produce un octal. 
 
 La sentencia **var**
 --------------
+La declaración var declara una nueva variable local o global:
+
+.. code-block:: nim
+
+ var x, y: int # declares x and y to have the type ``int``
+
+Indentation can be used after the var keyword to list a whole section of variables:
+
+.. code-block:: nim
+var
+  x, y: int
+  # a comment can occur here too
+  a, b, c: string
 
 La declaración de asignación
 --------------
+La declaración de asignación asigna un nuevo valor a una variable o, más generalmente, a una ubicación de almacenamiento:
+
+.. code-block:: nim
+ var x = "abc" # introduces a new variable `x` and assigns a value to it
+ x = "xyz"     # assigns a new value to `x`
+
+= es el operador de asignación . El operador de asignación puede estar sobrecargado.
+Puede declarar múltiples variables con una sola instrucción de asignación y todas las variables tendrán el mismo valor:
+
+.. code-block:: nim
+ var x, y = 3  # assigns 3 to the variables `x` and `y`
+ echo "x ", x  # outputs "x 3"
+ echo "y ", y  # outputs "y 3"
+ x = 42        # changes `x` to 42 without changing `y`
+ echo "x ", x  # outputs "x 42"
+ echo "y ", y  # outputs "y 3"
 
 Constantes
 --------------
