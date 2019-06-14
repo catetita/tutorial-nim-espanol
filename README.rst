@@ -89,9 +89,9 @@ Indentation can be used after the var keyword to list a whole section of variabl
 .. code-block:: nim
 
  var
- x, y: int
- # a comment can occur here too
- a, b, c: string
+  x, y: int
+  # a comment can occur here too
+  a, b, c: string
 
 La declaración de asignación
 --------------
