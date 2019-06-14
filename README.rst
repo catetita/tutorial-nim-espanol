@@ -41,6 +41,7 @@ Comentarios
 Los comentarios comienzan en cualquier lugar fuera de una cadena o literal de caracteres con el # de carácter de hash . Los comentarios de documentación comienzan con ## :
 
 .. code-block:: nim
+
  # A comment.
  var myVariable: int ## a documentation comment
 
@@ -49,6 +50,7 @@ Los comentarios de documentación son tokens; solo se permiten en ciertos lugare
 Los comentarios de varias líneas se inician con # [ y terminan con ] # . Los comentarios multilínea también pueden ser anidados.
 
 .. code-block:: nim
+
  #[
  You can have any Nim code text commented
  out inside this with no indentation restrictions.
@@ -61,6 +63,7 @@ Los comentarios de varias líneas se inician con # [ y terminan con ] # . Los co
 También puede usar la declaración de descarte junto con literales de cadena larga para crear comentarios de bloque:
 
 .. code-block:: nim
+
  discard """ You can have any Nim code text commented
  out inside this with no indentation restrictions.
       yes("May I ask a pointless question?") """
@@ -83,7 +86,8 @@ La declaración var declara una nueva variable local o global:
 Indentation can be used after the var keyword to list a whole section of variables:
 
 .. code-block:: nim
-var
+
+ var
   x, y: int
   # a comment can occur here too
   a, b, c: string
@@ -93,6 +97,7 @@ La declaración de asignación
 La declaración de asignación asigna un nuevo valor a una variable o, más generalmente, a una ubicación de almacenamiento:
 
 .. code-block:: nim
+
  var x = "abc" # introduces a new variable `x` and assigns a value to it
  x = "xyz"     # assigns a new value to `x`
 
@@ -100,6 +105,7 @@ La declaración de asignación asigna un nuevo valor a una variable o, más gene
 Puede declarar múltiples variables con una sola instrucción de asignación y todas las variables tendrán el mismo valor:
 
 .. code-block:: nim
+
  var x, y = 3  # assigns 3 to the variables `x` and `y`
  echo "x ", x  # outputs "x 3"
  echo "y ", y  # outputs "y 3"
