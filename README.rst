@@ -156,3 +156,38 @@ La diferencia entre let y const es: permite introducir una variable que no se pu
  
 Declaraciones de flujo de control
 --------------
+
+El programa de saludos consta de 3 instrucciones que se ejecutan de forma secuencial. Solo los programas más primitivos pueden salirse con la suya: también se necesitan ramificaciones y bucles.
+
+**Si declaración**
+
+La instrucción if es una forma de ramificar el flujo de control:
+
+.. code-block:: nim
+
+ let name = readLine(stdin)
+ if name == "":
+  echo "Poor soul, you lost your name?"
+ elif name == "name":
+  echo "Very funny, your name is name."
+ else:
+  echo "Hi, ", name, "!"
+
+Puede haber cero o más partes elif , y la otra parte es opcional. La palabra clave elif es la abreviatura de else if , y es útil para evitar una sangría excesiva. (La "" es la cadena vacía. No contiene caracteres.)
+
+**Declaración del caso**
+
+Otra forma de ramificación es proporcionada por la declaración del caso. Una declaración de caso es una rama múltiple:
+
+.. code-block:: nim
+
+ let name = readLine(stdin)
+ case name
+ of "":
+   echo "Poor soul, you lost your name?"
+ of "name":
+   echo "Very funny, your name is name."
+ of "Dave", "Frank":
+   echo "Cool name!"
+ else:
+   echo "Hi, ", name, "!"
