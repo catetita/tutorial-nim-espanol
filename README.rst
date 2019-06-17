@@ -248,3 +248,48 @@ La instrucción for es una construcción para recorrer cualquier elemento que pr
  # --> Outputs 1 2 3 4 5 6 7 8 9 10 on different lines
 
 La variable i es declarada implícitamente por el bucle for y tiene el tipo int , porque eso es lo que devuelve el conteo . i corre a través de los valores 1, 2, .., 10. Cada valor es eco -ed. Este código hace lo mismo:
+
+.. code-block:: nim
+
+ echo "Counting to 10: "
+ var i = 1
+ while i <= 10:
+  echo i
+  inc(i) # increment i by 1
+ # --> Outputs 1 2 3 4 5 6 7 8 9 10 on different lines
+
+La cuenta regresiva se puede lograr con la misma facilidad (pero es menos necesaria):
+
+.. code-block:: nim
+
+ echo "Counting down from 10 to 1: "
+ for i in countdown(10, 1):
+  echo i
+ # --> Outputs 10 9 8 7 6 5 4 3 2 1 on different lines
+
+Desde contando ocurre tan a menudo en los programas, Nim también tiene un .. iterador que hace lo mismo:
+
+.. code-block:: nim
+
+ for i in 1..10:
+  ...
+
+El conteo de índice cero tiene dos accesos directos .. < y ... ^ para simplificar el conteo a uno menos que el índice más alto:
+
+.. code-block:: nim
+
+ for i in 0..<10:
+  ...  # 0..9
+
+o
+
+.. code-block:: nim
+
+ var s = "some string"
+ for i in 0..<s.len:
+  ...
+
+Otros iteradores útiles para colecciones (como matrices y secuencias) son
+
+* ```artículos``` y ```mitems``` , que proporciona elementos inmutables y mutables respectivamente, y
+* ```Pares``` y ```mpairs``` que proporcionan el elemento y un número de índice (inmutable y mutable respectivamente)
