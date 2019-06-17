@@ -24,7 +24,7 @@ Veamos los elementos léxicos de Nim con más detalle: al igual que otros lengua
 
 **Literales de cuerdas y personajes**
 
-* Los literales de cadena están encerrados entre comillas dobles; Literales de caracteres en comillas simples. Los caracteres especiales se escapan con \ : \ n significa nueva línea, \ t significa tabulador, etc. También hay literales de cadena en bruto 
+* Los literales de cadena están encerrados entre comillas dobles; Literales de caracteres en comillas simples. Los caracteres especiales se escapan con ``\`` :`` \`` n significa nueva línea, ``\ t`` significa tabulador, etc. También hay literales de cadena en bruto 
 
 .. code-block:: nim
 
@@ -33,12 +33,12 @@ Veamos los elementos léxicos de Nim con más detalle: al igual que otros lengua
 
 * En literales crudos, la barra invertida no es un personaje de escape.
 
-La tercera y última forma de escribir literales de cadena son literales de cadena larga . Están escritos con tres citas: "" "..." "" ; pueden abarcar varias líneas y el \ no es un carácter de escape tampoco. Son muy útiles para incrustar plantillas de código HTML, por ejemplo.
+La tercera y última forma de escribir literales de cadena son literales de cadena larga . Están escritos con tres citas:`` "" "..." "" ``; pueden abarcar varias líneas y el`` \`` no es un carácter de escape tampoco. Son muy útiles para incrustar plantillas de código HTML, por ejemplo.
 
 
 **Comentarios**
 
-Los comentarios comienzan en cualquier lugar fuera de una cadena o literal de caracteres con el # de carácter de hash . Los comentarios de documentación comienzan con ## :
+Los comentarios comienzan en cualquier lugar fuera de una cadena o literal de caracteres con el ``# de`` carácter de hash . Los comentarios de documentación comienzan con ``##`` :
 
 .. code-block:: nim
 
@@ -48,7 +48,7 @@ Los comentarios comienzan en cualquier lugar fuera de una cadena o literal de ca
 
 Los comentarios de documentación son tokens; solo se permiten en ciertos lugares en el archivo de entrada ya que pertenecen al árbol de sintaxis! Esta característica permite generadores de documentación más simples.
 
-Los comentarios de varias líneas se inician con # [ y terminan con ] # . Los comentarios multilínea también pueden ser anidados.
+Los comentarios de varias líneas se inician con ``# [`` y terminan con ``] #`` . Los comentarios multilínea también pueden ser anidados.
 
 .. code-block:: nim
 
@@ -72,9 +72,9 @@ También puede usar la declaración de descarte junto con literales de cadena la
 **Números**
 
 Los literales numéricos se escriben como en la mayoría de los otros idiomas. Como un giro especial,
-se permiten guiones bajos para una mejor legibilidad: 1_000_000 (un millón). Un número que contiene un punto (o 'e' o 'E')
-es un literal de punto flotante: 1.0e9 (mil millones). Los literales hexadecimales están prefijados con 0x , 
-los literales binarios con 0b y los literales octales con 0o . Un cero inicial solo no produce un octal. 
+se permiten guiones bajos para una mejor legibilidad: ``1_000_000`` (un millón). Un número que contiene un punto (o 'e' o 'E')
+es un literal de punto flotante: ``1.0e9`` (mil millones). Los literales hexadecimales están prefijados con ``0x`` , 
+los literales binarios con ``0b`` y los literales octales con ``0o`` . Un cero inicial solo no produce un octal. 
 
 La sentencia **var**
 --------------
@@ -102,7 +102,7 @@ La declaración de asignación asigna un nuevo valor a una variable o, más gene
  var x = "abc" # introduces a new variable `x` and assigns a value to it
  x = "xyz"     # assigns a new value to `x`
 
-= es el operador de asignación . El operador de asignación puede estar sobrecargado.
+``=`` es el operador de asignación . El operador de asignación puede estar sobrecargado.
 Puede declarar múltiples variables con una sola instrucción de asignación y todas las variables tendrán el mismo valor:
 
 .. code-block:: nim
@@ -137,14 +137,14 @@ La sangría se puede usar después de la palabra clave const para enumerar una s
 
 La declaración de *let*
 --------------
-La instrucción let funciona igual que la instrucción var , pero los símbolos declarados son variables de asignación única : después de la inicialización, su valor no puede cambiar:
+La instrucción ``let`` funciona igual que la instrucción ``var`` , pero los símbolos declarados son variables de asignación única : después de la inicialización, su valor no puede cambiar:
 
 .. code-block:: nim
 
  let x = "abc" # introduces a new variable `x` and binds a value to it
  x = "xyz"     # Illegal: assignment to `x`
 
-La diferencia entre let y const es: permite introducir una variable que no se puede volver a asignar, const significa "imponer la evaluación del tiempo de compilación y colocarla en una sección de datos":
+La diferencia entre ``let`` y ``const`` es: ``permite`` introducir una variable que no se puede volver a asignar, ``const`` significa "imponer la evaluación del tiempo de compilación y colocarla en una sección de datos":
 
 .. code-block:: nim
 
@@ -173,7 +173,7 @@ La instrucción if es una forma de ramificar el flujo de control:
  else:
   echo "Hi, ", name, "!"
 
-Puede haber cero o más partes elif , y la otra parte es opcional. La palabra clave elif es la abreviatura de else if , y es útil para evitar una sangría excesiva. (La "" es la cadena vacía. No contiene caracteres.)
+Puede haber cero o más partes ``elif`` , y la ``else`` parte es opcional. La palabra clave ``elif``es la abreviatura de ``else`` ``if`` , y es útil para evitar una sangría excesiva. (La`` "" ``es la cadena vacía. No contiene caracteres.)
 
 **Declaración del caso**
 
@@ -192,7 +192,7 @@ Otra forma de ramificación es proporcionada por la declaración del caso. Una d
  else:
    echo "Hi, ", name, "!"
 
-Como se puede ver, para una de rama una coma separó la lista de valores también está permitido.
+Como se puede ver, para una ``of`` rama una coma separó la lista de valores también está permitido.
 
 La declaración de caso puede tratar con enteros, otros tipos ordinales y cadenas. (Lo que un tipo ordinal es se explicará pronto). Para enteros u otros tipos de ordinales también son posibles rangos de valores:
 
@@ -207,7 +207,7 @@ La declaración de caso puede tratar con enteros, otros tipos ordinales y cadena
  of 0..2, 4..7: echo "The number is in the set: {0, 1, 2, 4, 5, 6, 7}"
  of 3, 8: echo "The number is 3 or 8"
 
-Sin embargo, el código anterior no se compila: el motivo es que debe cubrir todos los valores que n puede contener, pero el código solo maneja los valores 0..8 . Dado que no es muy práctico enumerar todos los demás enteros posibles (aunque es posible gracias a la notación de rango), solucionamos esto indicando al compilador que por cada otro valor no se debe hacer nada:
+Sin embargo, el código anterior no se compila: el motivo es que debe cubrir todos los valores que ``n`` puede contener, pero el código solo maneja los valores ``0..8`` . Dado que no es muy práctico enumerar todos los demás enteros posibles (aunque es posible gracias a la notación de rango), solucionamos esto indicando al compilador que por cada otro valor no se debe hacer nada:
 
 .. code-block:: nim
 
@@ -217,7 +217,7 @@ Sin embargo, el código anterior no se compila: el motivo es que debe cubrir tod
  of 3, 8: echo "The number is 3 or 8"
  else: discard
 
-La declaración de descarte vacía es una declaración de no hacer nada . El compilador sabe que una declaración de caso con una parte else no puede fallar y, por lo tanto, el error desaparece. Tenga en cuenta que es imposible cubrir todos los valores de cadena posibles: es por eso que los casos de cadena siempre necesitan una rama else .
+La declaración de descarte vacía es una declaración de no hacer nada . El compilador sabe que una declaración de caso con una parte else no puede fallar y, por lo tanto, el error desaparece. Tenga en cuenta que es imposible cubrir todos los valores de cadena posibles: es por eso que los casos de cadena siempre necesitan una rama ``else`` .
 
 En general, la declaración de caso se usa para los tipos de subrango o enumeración donde el compilador comprueba que cubrió cualquier valor posible.
 
@@ -238,7 +238,7 @@ El ejemplo utiliza un bucle while para seguir preguntando a los usuarios por su 
 
 **Para declaración**
 
-La instrucción for es una construcción para recorrer cualquier elemento que proporciona un iterador . El ejemplo utiliza el iterador incorporado de cuenta atrás :
+La instrucción ``for`` es una construcción para recorrer cualquier elemento que proporciona un iterador . El ejemplo utiliza el iterador incorporado de cuenta atrás :
 
 .. code-block:: nim
 
@@ -247,7 +247,7 @@ La instrucción for es una construcción para recorrer cualquier elemento que pr
   echo i
  # --> Outputs 1 2 3 4 5 6 7 8 9 10 on different lines
 
-La variable i es declarada implícitamente por el bucle for y tiene el tipo int , porque eso es lo que devuelve el conteo . i corre a través de los valores 1, 2, .., 10. Cada valor es eco -ed. Este código hace lo mismo:
+La variable ``i`` es declarada implícitamente por el bucle ``for`` y tiene el tipo ``int`` , porque eso es lo que devuelve el conteo . ``i`` corre a través de los valores 1, 2, .., 10. Cada valor es ``echo`` -ed. Este código hace lo mismo:
 
 .. code-block:: nim
 
@@ -274,7 +274,7 @@ Desde contando ocurre tan a menudo en los programas, Nim también tiene un .. it
  for i in 1..10:
   ...
 
-El conteo de índice cero tiene dos accesos directos .. < y ... ^ para simplificar el conteo a uno menos que el índice más alto:
+El conteo de índice cero tiene dos accesos directos ``.. <`` y ``... ^`` para simplificar el conteo a uno menos que el índice más alto:
 
 .. code-block:: nim
 
@@ -291,5 +291,5 @@ o
 
 Otros iteradores útiles para colecciones (como matrices y secuencias) son
 
-* ```artículos``` y ```mitems``` , que proporciona elementos inmutables y mutables respectivamente, y
-* ```Pares``` y ```mpairs``` que proporcionan el elemento y un número de índice (inmutable y mutable respectivamente)
+* ``items`` y ``mitems`` , que proporciona elementos inmutables y mutables respectivamente, y
+* ``pairs`` y ``mpairs`` que proporcionan el elemento y un número de índice (inmutable y mutable respectivamente)
