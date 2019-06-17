@@ -293,3 +293,5 @@ Otros iteradores útiles para colecciones (como matrices y secuencias) son
 
 * ``items`` y ``mitems`` , que proporciona elementos inmutables y mutables respectivamente, y
 * ``pairs`` y ``mpairs`` que proporcionan el elemento y un número de índice (inmutable y mutable respectivamente)
+
+   <h1 style="color:red">hola</h1>
