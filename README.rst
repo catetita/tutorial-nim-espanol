@@ -22,8 +22,8 @@ Elementos léxicos
 --------------
 Veamos los elementos léxicos de Nim con más detalle: al igual que otros lenguajes de programación, Nim consta de literales (de cadena), identificadores, palabras clave, comentarios, operadores y otros signos de puntuación.
 
-Literales de cuerdas y personajes
---------------
+**Literales de cuerdas y personajes**
+
 * Los literales de cadena están encerrados entre comillas dobles; Literales de caracteres en comillas simples. Los caracteres especiales se escapan con \ : \ n significa nueva línea, \ t significa tabulador, etc. También hay literales de cadena en bruto 
 
 .. code-block:: nim
@@ -36,8 +36,8 @@ Literales de cuerdas y personajes
 La tercera y última forma de escribir literales de cadena son literales de cadena larga . Están escritos con tres citas: "" "..." "" ; pueden abarcar varias líneas y el \ no es un carácter de escape tampoco. Son muy útiles para incrustar plantillas de código HTML, por ejemplo.
 
 
-Comentarios
---------------
+**Comentarios**
+
 Los comentarios comienzan en cualquier lugar fuera de una cadena o literal de caracteres con el # de carácter de hash . Los comentarios de documentación comienzan con ## :
 
 .. code-block:: nim
@@ -69,8 +69,8 @@ También puede usar la declaración de descarte junto con literales de cadena la
  out inside this with no indentation restrictions.
     yes("May I ask a pointless question?") """
 
-Números
---------------
+**Números**
+
 Los literales numéricos se escriben como en la mayoría de los otros idiomas. Como un giro especial,
 se permiten guiones bajos para una mejor legibilidad: 1_000_000 (un millón). Un número que contiene un punto (o 'e' o 'E')
 es un literal de punto flotante: 1.0e9 (mil millones). Los literales hexadecimales están prefijados con 0x , 
@@ -191,3 +191,60 @@ Otra forma de ramificación es proporcionada por la declaración del caso. Una d
    echo "Cool name!"
  else:
    echo "Hi, ", name, "!"
+
+Como se puede ver, para una de rama una coma separó la lista de valores también está permitido.
+
+La declaración de caso puede tratar con enteros, otros tipos ordinales y cadenas. (Lo que un tipo ordinal es se explicará pronto). Para enteros u otros tipos de ordinales también son posibles rangos de valores:
+
+.. code-block:: nim
+
+ # this statement will be explained later:
+ from strutils import parseInt
+
+ echo "A number please: "
+ let n = parseInt(readLine(stdin))
+ case n
+ of 0..2, 4..7: echo "The number is in the set: {0, 1, 2, 4, 5, 6, 7}"
+ of 3, 8: echo "The number is 3 or 8"
+
+Sin embargo, el código anterior no se compila: el motivo es que debe cubrir todos los valores que n puede contener, pero el código solo maneja los valores 0..8 . Dado que no es muy práctico enumerar todos los demás enteros posibles (aunque es posible gracias a la notación de rango), solucionamos esto indicando al compilador que por cada otro valor no se debe hacer nada:
+
+.. code-block:: nim
+
+ ...
+ case n
+ of 0..2, 4..7: echo "The number is in the set: {0, 1, 2, 4, 5, 6, 7}"
+ of 3, 8: echo "The number is 3 or 8"
+ else: discard
+
+La declaración de descarte vacía es una declaración de no hacer nada . El compilador sabe que una declaración de caso con una parte else no puede fallar y, por lo tanto, el error desaparece. Tenga en cuenta que es imposible cubrir todos los valores de cadena posibles: es por eso que los casos de cadena siempre necesitan una rama else .
+
+En general, la declaración de caso se usa para los tipos de subrango o enumeración donde el compilador comprueba que cubrió cualquier valor posible.
+
+**Mientras declaración**
+
+La instrucción while es una construcción de bucle simple:
+
+.. code-block:: nim
+
+ echo "What's your name? "
+ var name = readLine(stdin)
+ while name == "":
+  echo "Please tell me your name: "
+  name = readLine(stdin)
+  # no ``var``, because we do not declare a new variable here
+
+El ejemplo utiliza un bucle while para seguir preguntando a los usuarios por su nombre, siempre y cuando el usuario no escriba nada (solo presione RETORNO).
+
+**Para declaración**
+
+La instrucción for es una construcción para recorrer cualquier elemento que proporciona un iterador . El ejemplo utiliza el iterador incorporado de cuenta atrás :
+
+.. code-block:: nim
+
+ echo "Counting to ten: "
+ for i in countup(1, 10):
+  echo i
+ # --> Outputs 1 2 3 4 5 6 7 8 9 10 on different lines
+
+La variable i es declarada implícitamente por el bucle for y tiene el tipo int , porque eso es lo que devuelve el conteo . i corre a través de los valores 1, 2, .., 10. Cada valor es eco -ed. Este código hace lo mismo:
