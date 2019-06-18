@@ -1,4 +1,6 @@
-Tutorial de Nim (Parte I)
+.. raw:: html
+<center><h1 style="color:blue"> Tutorial de Nim (Parte I) </h1></center>
+
 =========
 
 .. image:: https://raw.githubusercontent.com/catetita/tutorial-nim-espanol/master/img.png
@@ -173,7 +175,9 @@ La instrucción if es una forma de ramificar el flujo de control:
  else:
   echo "Hi, ", name, "!"
 
-Puede haber cero o más partes ``elif`` , y la ``else`` parte es opcional. La palabra clave ``elif``es la abreviatura de ``else`` ``if`` , y es útil para evitar una sangría excesiva. (La`` "" ``es la cadena vacía. No contiene caracteres.)
+Puede haber cero o más partes ``elif`` , y la ``else`` parte es opcional.
+La palabra clave ``elif``es la abreviatura de ``else`` ``if`` , y es útil para evitar una sangría excesiva. 
+(La "" es la cadena vacía. No contiene caracteres.)
 
 **Declaración del caso**
 
@@ -184,13 +188,13 @@ Otra forma de ramificación es proporcionada por la declaración del caso. Una d
  let name = readLine(stdin)
  case name
  of "":
-   echo "Poor soul, you lost your name?"
+  echo "Poor soul, you lost your name?"
  of "name":
-   echo "Very funny, your name is name."
+  echo "Very funny, your name is name."
  of "Dave", "Frank":
-   echo "Cool name!"
+  echo "Cool name!"
  else:
-   echo "Hi, ", name, "!"
+  echo "Hi, ", name, "!"
 
 Como se puede ver, para una ``of`` rama una coma separó la lista de valores también está permitido.
 
@@ -294,5 +298,3 @@ Otros iteradores útiles para colecciones (como matrices y secuencias) son
 * ``items`` y ``mitems`` , que proporciona elementos inmutables y mutables respectivamente, y
 * ``pairs`` y ``mpairs`` que proporcionan el elemento y un número de índice (inmutable y mutable respectivamente)
 
-.. raw:: html
-   <h1 style="color:red">hola</h1>
