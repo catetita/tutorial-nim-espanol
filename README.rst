@@ -1,5 +1,4 @@
-.. raw:: html
-<center><h1 style="color:blue"> Tutorial de Nim (Parte I) </h1></center>
+Tutorial de Nim 
 
 =========
 
