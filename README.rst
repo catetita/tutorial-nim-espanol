@@ -315,7 +315,7 @@ abren un nuevo ámbito. Esto significa que en el siguiente ejemplo, ``x`` no es 
  echo x # does not work
 
 Una sentencia while (para) introduce un bloque implícito. Los identificadores solo son visibles dentro del bloque que han sido declarados.
-La instrucción de bloque se puede usar para abrir un nuevo bloque explícitamente:
+La instrucción de ``block`` se puede usar para abrir un nuevo bloque explícitamente:
 
 .. code-block:: nim
 
@@ -323,7 +323,7 @@ La instrucción de bloque se puede usar para abrir un nuevo bloque explícitamen
   var x = "hi"
  echo x # does not work either
 
-La etiqueta del bloque ( myblock en el ejemplo) es opcional.
+La etiqueta del bloque ( ``myblock`` en el ejemplo) es opcional.
 
 **Declaración de ruptura**
 
@@ -374,7 +374,7 @@ Ejemplo:
   echo "unknown operating system"
 
 
-La instrucción ``when`` es casi idéntica a la instrucción`` if ``, pero con estas diferencias:
+La instrucción ``when`` es casi idéntica a la instrucción``if``, pero con estas diferencias:
 
 * Cada condición debe ser una expresión constante ya que es evaluada por el compilador.
 * Las declaraciones dentro de una rama no abren un nuevo alcance.
