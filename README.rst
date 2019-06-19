@@ -328,7 +328,7 @@ La etiqueta del bloque ( myblock en el ejemplo) es opcional.
 **Declaración de ruptura**
 
 Un bloque se puede dejar prematuramente con una instrucción break .
-La instrucción break puede dejar un tiempo , para , o una instrucción de bloqueo . 
+La instrucción ``break`` puede dejar un ``while``,`` for``, o una instrucción de ``block``.
 Abandona la construcción más interna, a menos que se dé una etiqueta de un bloque:
 
 .. code-block:: nim
@@ -349,7 +349,7 @@ Abandona la construcción más interna, a menos que se dé una etiqueta de un bl
 
 **Continuar declaración**
 
-Al igual que en muchos otros lenguajes de programación, una instrucción de continuación comienza la siguiente iteración inmediatamente:
+Al igual que en muchos otros lenguajes de programación, una instrucción de ``continue`` comienza la siguiente iteración inmediatamente:
 
 .. code-block:: nim
 
@@ -374,13 +374,13 @@ Ejemplo:
   echo "unknown operating system"
 
 
-La instrucción when es casi idéntica a la instrucción if , pero con estas diferencias:
+La instrucción ``when`` es casi idéntica a la instrucción`` if ``, pero con estas diferencias:
 
 * Cada condición debe ser una expresión constante ya que es evaluada por el compilador.
 * Las declaraciones dentro de una rama no abren un nuevo alcance.
-* El compilador comprueba la semántica y produce código solo para las declaraciones que pertenecen a la primera condición que se evalúa como verdadera .
+* El compilador comprueba la semántica y produce código solo para las declaraciones que pertenecen a la primera condición que se evalúa como ``true`` .
 
-La instrucción when es útil para escribir código específico de plataforma, similar a la construcción #ifdef en el lenguaje de programación C.
+La instrucción ``when`` es útil para escribir código específico de plataforma, similar a la construcción ``#ifdef`` en el lenguaje de programación C.
 
 
 Declaraciones y sangría
@@ -390,7 +390,7 @@ Ahora que cubrimos las declaraciones de flujo de control básico, volvamos a las
 
 En Nim hay una distinción entre declaraciones simples y declaraciones complejas .
 Las declaraciones simples no pueden contener otras declaraciones: la asignación, las llamadas a procedimientos o la declaración de devolución pertenecen a las declaraciones simples. 
-Las declaraciones complejas como si , cuándo , por , mientras pueden contener otras declaraciones.
+Las declaraciones complejas como ``if``, ``when``,`` for``,``while`` pueden contener otras declaraciones.
 Para evitar ambigüedades, las declaraciones complejas siempre deben estar sangradas, pero las declaraciones simples y simples no:
 
 .. code-block:: nim
@@ -423,7 +423,7 @@ Las expresiones pueden contener sangría en ciertos lugares para una mejor legib
 
 Como regla general, se permite la sangría dentro de las expresiones después de los operadores, un paréntesis abierto y después de las comas.
 
-Con paréntesis y punto y coma (;) puede usar sentencias donde solo se permite una expresión:
+Con paréntesis y punto y coma `` (;)`` puede usar sentencias donde solo se permite una expresión:
 
 .. code-block:: nim
 
