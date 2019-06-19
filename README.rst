@@ -1,5 +1,4 @@
-Tutorial de Nim 
-
+**Tutorial de Nim**
 =========
 
 .. image:: https://raw.githubusercontent.com/catetita/tutorial-nim-espanol/master/img.png
@@ -297,3 +296,31 @@ Otros iteradores útiles para colecciones (como matrices y secuencias) son
 * ``items`` y ``mitems`` , que proporciona elementos inmutables y mutables respectivamente, y
 * ``pairs`` y ``mpairs`` que proporcionan el elemento y un número de índice (inmutable y mutable respectivamente)
 
+.. code-block:: nim
+
+ for index, item in ["a","b"].pairs:
+  echo item, " at index ", index
+ # => a at index 0
+ # => b at index 1
+
+**Los ámbitos y la declaración de bloque**
+
+Las declaraciones de flujo de control tienen una característica aún no cubierta:
+abren un nuevo ámbito. Esto significa que en el siguiente ejemplo, ``x`` no es accesible fuera del bucle:
+
+.. code-block:: nim
+
+ while false:
+  var x = "hi"
+ echo x # does not work
+
+Una sentencia while (para) introduce un bloque implícito. Los identificadores solo son visibles dentro del bloque que han sido declarados.
+La instrucción de bloque se puede usar para abrir un nuevo bloque explícitamente:
+
+.. code-block:: nim
+
+ block myblock:
+  var x = "hi"
+ echo x # does not work either
+
+La etiqueta del bloque ( myblock en el ejemplo) es opcional.
