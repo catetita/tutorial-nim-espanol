@@ -324,3 +324,137 @@ La instrucción de bloque se puede usar para abrir un nuevo bloque explícitamen
  echo x # does not work either
 
 La etiqueta del bloque ( myblock en el ejemplo) es opcional.
+
+**Declaración de ruptura**
+
+Un bloque se puede dejar prematuramente con una instrucción break .
+La instrucción break puede dejar un tiempo , para , o una instrucción de bloqueo . 
+Abandona la construcción más interna, a menos que se dé una etiqueta de un bloque:
+
+.. code-block:: nim
+
+ block myblock:
+  echo "entering block"
+  while true:
+    echo "looping"
+    break # leaves the loop, but not the block
+  echo "still in block"
+
+ block myblock2:
+  echo "entering block"
+  while true:
+    echo "looping"
+    break myblock2 # leaves the block (and the loop)
+  echo "still in block"
+
+**Continuar declaración**
+
+Al igual que en muchos otros lenguajes de programación, una instrucción de continuación comienza la siguiente iteración inmediatamente:
+
+.. code-block:: nim
+
+ while true:
+  let x = readLine(stdin)
+  if x == "": continue
+  echo x
+
+**Cuando declaración**
+
+Ejemplo:
+
+.. code-block:: nim
+
+ when system.hostOS == "windows":
+  echo "running on Windows!"
+ elif system.hostOS == "linux":
+  echo "running on Linux!"
+ elif system.hostOS == "macosx":
+  echo "running on Mac OS X!"
+ else:
+  echo "unknown operating system"
+
+
+La instrucción when es casi idéntica a la instrucción if , pero con estas diferencias:
+
+* Cada condición debe ser una expresión constante ya que es evaluada por el compilador.
+* Las declaraciones dentro de una rama no abren un nuevo alcance.
+* El compilador comprueba la semántica y produce código solo para las declaraciones que pertenecen a la primera condición que se evalúa como verdadera .
+
+La instrucción when es útil para escribir código específico de plataforma, similar a la construcción #ifdef en el lenguaje de programación C.
+
+
+Declaraciones y sangría
+--------
+
+Ahora que cubrimos las declaraciones de flujo de control básico, volvamos a las reglas de sangría de Nim.
+
+En Nim hay una distinción entre declaraciones simples y declaraciones complejas .
+Las declaraciones simples no pueden contener otras declaraciones: la asignación, las llamadas a procedimientos o la declaración de devolución pertenecen a las declaraciones simples. 
+Las declaraciones complejas como si , cuándo , por , mientras pueden contener otras declaraciones.
+Para evitar ambigüedades, las declaraciones complejas siempre deben estar sangradas, pero las declaraciones simples y simples no:
+
+.. code-block:: nim
+
+ # no indentation needed for single assignment statement:
+ if x: x = false
+ 
+ # indentation needed for nested if statement:
+ if x:
+  if y:
+    y = false
+  else:
+    y = true
+
+ # indentation needed, because two statements follow the condition:
+ if x:
+  x = false
+  y = false
+
+Las expresiones son parte de una declaración que generalmente resulta en un valor. 
+La condición en una sentencia if es un ejemplo para una expresión.
+Las expresiones pueden contener sangría en ciertos lugares para una mejor legibilidad:
+
+.. code-block:: nim
+
+ if thisIsaLongCondition() and
+    thisIsAnotherLongCondition(1,
+       2, 3, 4):
+  x = true
+
+Como regla general, se permite la sangría dentro de las expresiones después de los operadores, un paréntesis abierto y después de las comas.
+
+Con paréntesis y punto y coma (;) puede usar sentencias donde solo se permite una expresión:
+
+.. code-block:: nim
+
+ # computes fac(4) at compile time:
+ const fac4 = (var x = 1; for i in 1..4: x *= i; x)
+
+
+Procedimientos
+---------
+
+Para definir nuevos comandos como echo y readLine en los ejemplos, se necesita el concepto de un ``procedimiento`` . 
+(Algunos idiomas los llaman métodos o funciones ). En Nim, los nuevos procedimientos se definen con la palabra clave ``proc`` :
+
+.. code-block:: nim
+
+ proc yes(question: string): bool =
+  echo question, " (y/n)"
+  while true:
+    case readLine(stdin)
+    of "y", "Y", "yes", "Yes": return true
+    of "n", "N", "no", "No": return false
+    else: echo "Please be clear: yes or no"
+
+ if yes("Should I delete all your important files?"):
+  echo "I'm sorry Dave, I'm afraid I can't do that."
+ else:
+  echo "I think you know what the problem is just as well as I do."
+
+Este ejemplo muestra un procedimiento llamado sí que hace una pregunta al usuario y devuelve verdadero si contestó "sí" (o algo similar) y devuelve falso si respondió "no" (o algo similar).
+Una declaración de retorno abandona el procedimiento (y, por lo tanto, el bucle while) inmediatamente.
+La ( sintaxis : cadena): ``bool`` describe que el procedimiento espera un parámetro llamado pregunta de tipo ``cadena`` y devuelve un valor de tipo ``bool`` . 
+El tipo bool está integrado: los únicos valores válidos para ``bool`` son ``true`` y ``false``. Las condiciones en las sentencias if o while deben ser de tipo ``bool ``.
+
+Alguna terminología: en la pregunta de ejemplo se llama un parámetro (formal) ,``"Debería ..."`` se llama un argumento que se pasa a este parámetro.
