@@ -174,7 +174,7 @@ La instrucción if es una forma de ramificar el flujo de control:
   echo "Hi, ", name, "!"
 
 Puede haber cero o más partes ``elif`` , y la ``else`` parte es opcional.
-La palabra clave ``elif``es la abreviatura de ``else`` ``if`` , y es útil para evitar una sangría excesiva. 
+La palabra clave ``elif`` es la abreviatura de ``else`` ``if`` , y es útil para evitar una sangría excesiva. 
 (La "" es la cadena vacía. No contiene caracteres.)
 
 **Declaración del caso**
@@ -328,7 +328,7 @@ La etiqueta del bloque ( ``myblock`` en el ejemplo) es opcional.
 **Declaración de ruptura**
 
 Un bloque se puede dejar prematuramente con una instrucción break .
-La instrucción ``break`` puede dejar un ``while``,`` for``, o una instrucción de ``block``.
+La instrucción ``break`` puede dejar un ``while`` , `` for``, o una instrucción de ``block`` .
 Abandona la construcción más interna, a menos que se dé una etiqueta de un bloque:
 
 .. code-block:: nim
@@ -374,7 +374,7 @@ Ejemplo:
   echo "unknown operating system"
 
 
-La instrucción ``when`` es casi idéntica a la instrucción``if``, pero con estas diferencias:
+La instrucción ``when`` es casi idéntica a la instrucción ``if`` , pero con estas diferencias:
 
 * Cada condición debe ser una expresión constante ya que es evaluada por el compilador.
 * Las declaraciones dentro de una rama no abren un nuevo alcance.
@@ -458,3 +458,28 @@ La ( sintaxis : cadena): ``bool`` describe que el procedimiento espera un parám
 El tipo bool está integrado: los únicos valores válidos para ``bool`` son ``true`` y ``false``. Las condiciones en las sentencias if o while deben ser de tipo ``bool ``.
 
 Alguna terminología: en la pregunta de ejemplo se llama un parámetro (formal) , ``"Debería ..."`` se llama un argumento que se pasa a este parámetro.
+
+**Variable de resultado**
+
+Un procedimiento que devuelve un valor tiene una variable de ``result`` implícita declarada que representa el valor de retorno. Una declaración de ``return`` sin expresión es una abreviatura para el ``return`` ``result`` . El valor del ``result`` siempre se devuelve automáticamente al final de un procedimiento si no hay una declaración de ``return`` en la salida.
+
+.. code-block:: nim
+
+ proc sumTillNegative(x: varargs[int]): int =
+  for i in x:
+    if i < 0:
+      return
+    result = result + i
+
+ echo sumTillNegative() # echos 0
+ echo sumTillNegative(3, 4, 5) # echos 12
+ echo sumTillNegative(3, 4 , -1 , 6) # echos 7
+
+La variable de ``result`` ya está declarada implícitamente al inicio de la función, por lo que declararla de nuevo con 'var result', por ejemplo, la sombrearía con una variable normal del mismo nombre. La variable de resultado también ya está inicializada con el valor predeterminado del tipo. Tenga en cuenta que los tipos de datos referenciales serán ``nil`` al inicio del procedimiento y, por lo tanto, pueden requerir una inicialización manual.
+
+
+
+
+
+
+
