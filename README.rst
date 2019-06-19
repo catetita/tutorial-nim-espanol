@@ -390,7 +390,7 @@ Ahora que cubrimos las declaraciones de flujo de control básico, volvamos a las
 
 En Nim hay una distinción entre declaraciones simples y declaraciones complejas .
 Las declaraciones simples no pueden contener otras declaraciones: la asignación, las llamadas a procedimientos o la declaración de devolución pertenecen a las declaraciones simples. 
-Las declaraciones complejas como ``if``, ``when``,`` for``,``while`` pueden contener otras declaraciones.
+Las declaraciones complejas como ``if``, ``when``,``for``,``while`` pueden contener otras declaraciones.
 Para evitar ambigüedades, las declaraciones complejas siempre deben estar sangradas, pero las declaraciones simples y simples no:
 
 .. code-block:: nim
@@ -423,7 +423,7 @@ Las expresiones pueden contener sangría en ciertos lugares para una mejor legib
 
 Como regla general, se permite la sangría dentro de las expresiones después de los operadores, un paréntesis abierto y después de las comas.
 
-Con paréntesis y punto y coma `` (;)`` puede usar sentencias donde solo se permite una expresión:
+Con paréntesis y punto y coma ``(;)`` puede usar sentencias donde solo se permite una expresión:
 
 .. code-block:: nim
 
@@ -457,4 +457,4 @@ Una declaración de retorno abandona el procedimiento (y, por lo tanto, el bucle
 La ( sintaxis : cadena): ``bool`` describe que el procedimiento espera un parámetro llamado pregunta de tipo ``cadena`` y devuelve un valor de tipo ``bool`` . 
 El tipo bool está integrado: los únicos valores válidos para ``bool`` son ``true`` y ``false``. Las condiciones en las sentencias if o while deben ser de tipo ``bool ``.
 
-Alguna terminología: en la pregunta de ejemplo se llama un parámetro (formal) ,``"Debería ..."`` se llama un argumento que se pasa a este parámetro.
+Alguna terminología: en la pregunta de ejemplo se llama un parámetro (formal) ,`` "Debería ..." `` se llama un argumento que se pasa a este parámetro.
