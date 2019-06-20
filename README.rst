@@ -479,7 +479,42 @@ La variable de ``result`` ya está declarada implícitamente al inicio de la fun
 
 
 
+**Parámetros**
+
+Los parámetros son inmutables en el cuerpo del procedimiento. De forma predeterminada, su valor no se puede cambiar porque esto permite al compilador implementar el paso de parámetros de la manera más eficiente. Si se necesita una variable mutable dentro del procedimiento, debe declararse con ``var`` en el cuerpo del procedimiento. Es posible sombrear el nombre del parámetro, y en realidad un idioma:
+
+.. code-block:: nim
+
+ proc printSeq(s: seq, nprinted: int = -1) =
+  var nprinted = if nprinted == -1: s.len else: min(nprinted, s.len)
+  for i in 0 .. <nprinted:
+    echo s[i]
+
+Si el procedimiento necesita modificar el argumento para la persona que llama, se puede usar un parámetro ``var`` :
+
+.. code-block:: nim
+
+ proc divmod(a, b: int; res, remainder: var int) =
+  res = a div b        # integer division
+  remainder = a mod b  # integer modulo operation
+
+ var
+  x, y: int
+ divmod(8, 5, x, y) # modifies x and y
+ echo x
+ echo y
 
 
+En el ejemplo, ``res`` y ``remainder`` son ``var parameters`` . Los parámetros de la var pueden ser modificados por el procedimiento y los cambios son visibles para la persona que llama. Tenga en cuenta que el ejemplo anterior sería mejor utilizar una tupla como valor de retorno en lugar de usar los parámetros var.
+
+**Declaración de descarte**
+
+Para llamar a un procedimiento que devuelve un valor solo por sus efectos secundarios e ignorando su valor de retorno, se debe usar una declaración de ``discard`` . Nim no permite tirar silenciosamente un valor de retorno:
+
+.. code-block:: nim
+
+ discard yes("May I ask a pointless question?")
+
+El valor de retorno se puede ignorar implícitamente si el proc / iterador llamado se ha declarado con el pragma ``discardable`` :
 
 
