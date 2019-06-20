@@ -587,9 +587,9 @@ Nim proporciona la capacidad de sobrecargar procedimientos similares a C ++
 Los operadores
 La biblioteca Nim hace un uso intensivo de la sobrecarga, una de las razones es que cada operador como + es solo un proceso sobrecargado. El analizador le permite usar operadores en ``infix notation (a + b)``  o ``prefix notation (+ a)`` . Un operador de infijo siempre recibe dos argumentos, un operador de prefijo siempre uno. (Los operadores de Postfix no son posibles, porque esto sería ambiguo: ``a @ @ b significa (a) @ (@b)`` o ``( a @ ) @ (b)`` ? Siempre significa ``(a) @ (@b)`` , porque no hay operadores de postfix en Nim.)
 
-Aparte de unos cuantos incorporado operadores de palabras clave tales como y , o , no , los operadores siempre constan de los siguientes caracteres: `` + - * \ / <> = @ $ ~ &%! ? ^. |``
+Aparte de unos cuantos incorporado operadores de palabras clave tales como y , o , no , los operadores siempre constan de los siguientes caracteres: ``+ - * \ / <> = @ $ ~ &%! ? ^. |``
 
-Se permiten operadores definidos por el usuario. Nada le impide definir su propio operador `` @!? + ~ `` , Pero hacerlo puede reducir la legibilidad.
+Se permiten operadores definidos por el usuario. Nada le impide definir su propio operador ``@!? + ~`` , Pero hacerlo puede reducir la legibilidad.
 
 La precedencia del operador está determinada por su primer carácter. Los detalles se pueden encontrar en el manual.
 
