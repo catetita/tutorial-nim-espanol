@@ -595,4 +595,50 @@ La precedencia del operador está determinada por su primer carácter. Los detal
 
 Para definir un nuevo operador, encierre el operador en backticks "` `":
 
+.. code-block:: nim
 
+ proc `$` (x: myDataType): string = ...
+ # now the $ operator also works with myDataType, overloading resolution
+ # ensures that $ works for built-in types just like before
+
+La notación "` `" también se puede usar para llamar a un operador como cualquier otro procedimiento:
+
+.. code-block:: nim
+ 
+ if `==`( `+`(3, 4), 7): echo "True"
+
+
+**Declaraciones hacia adelante**
+
+Cada variable, procedimiento, etc. debe ser declarado antes de que pueda ser utilizado. (La razón de esto es que no es trivial evitar esta necesidad en un lenguaje que admita la programación meta tan ampliamente como lo hace Nim). Sin embargo, esto no se puede hacer para procedimientos recursivos mutuos:
+
+.. code-block:: nim
+
+ # forward declaration:
+ proc even(n: int): boolproc odd(n: int): bool =
+
+.. code-block:: nim
+
+  assert(n >= 0) # makes sure we don't run into negative recursion
+  if n == 0: false
+  else:
+    n == 1 or even(n-1)
+
+ proc even(n: int): bool =
+  assert(n >= 0) # makes sure we don't run into negative recursion
+  if n == 1: false
+  else:
+    n == 0 or odd(n-1)
+
+
+Aquí lo ``odd`` depende de ``even`` y viceversa. Por lo tanto, ``even`` es necesario introducirlo en el compilador antes de que esté completamente definido. La sintaxis para tal declaración de reenvío es simple: simplemente omita el ``=`` y el cuerpo del procedimiento. El ``assert`` solo agrega condiciones de borde y se cubrirá más adelante en la sección Módulos .
+
+Las versiones posteriores del lenguaje debilitarán los requisitos para las declaraciones a plazo.
+
+El ejemplo también muestra que el cuerpo de un proceso puede consistir en una sola expresión cuyo valor se devuelve implícitamente.
+
+
+Iteradores
+------
+
+Volvamos al ejemplo de conteo simple:
