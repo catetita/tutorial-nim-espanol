@@ -517,4 +517,39 @@ Para llamar a un procedimiento que devuelve un valor solo por sus efectos secund
 
 El valor de retorno se puede ignorar implícitamente si el proc / iterador llamado se ha declarado con el pragma ``discardable`` :
 
+.. code-block:: nim
 
+ proc p(x, y: int): int {.discardable.} =
+  return x + y
+
+ p(3, 4) # now valid
+
+La ``discard`` de descarte también se puede usar para crear comentarios de bloque como se describe en la sección Comentarios .
+
+**Argumentos con nombre**
+
+A menudo, un procedimiento tiene muchos parámetros y no está claro en qué orden aparecen los parámetros. Esto es especialmente cierto para los procedimientos que construyen un tipo de datos complejo. Por lo tanto, los argumentos de un procedimiento se pueden nombrar, de modo que quede claro qué argumento pertenece a qué parámetro:
+
+.. code-block:: nim
+
+ proc createWindow(x, y, width, height: int; title: string;
+                  show: bool): Window =
+   ...
+
+ var w = createWindow(show = true, title = "My Application",
+                     x = 0, y = 0, height = 600, width = 800)
+
+
+Ahora que usamos argumentos con nombre para llamar a ``createWindow``, el orden de los argumentos ya no importa. También es posible mezclar argumentos nombrados con argumentos ordenados, pero no es muy legible:
+
+.. code-block:: nim
+
+ var w = createWindow(0, 0, title = "My Application",
+                     height = 600, width = 800, true)
+
+
+El compilador comprueba que cada parámetro recibe exactamente un argumento.
+
+**Valores predeterminados**
+
+Para que el proceso ``createWindow`` sea ​​más fácil de usar, debe proporcionar ``default values`` ; estos son valores que se utilizan como argumentos si el llamante no los especifica:
