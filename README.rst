@@ -553,3 +553,46 @@ El compilador comprueba que cada parámetro recibe exactamente un argumento.
 **Valores predeterminados**
 
 Para que el proceso ``createWindow`` sea ​​más fácil de usar, debe proporcionar ``default values`` ; estos son valores que se utilizan como argumentos si el llamante no los especifica:
+
+.. code-block:: nim
+
+ proc createWindow(x = 0, y = 0, width = 500, height = 700,
+                  title = "unknown",
+                  show = true): Window =
+   ...
+
+ var w = createWindow(title = "My Application", height = 600, width = 800)
+
+Ahora la llamada a ``createWindow`` solo necesita establecer los valores que difieren de los valores predeterminados.
+
+Tenga en cuenta que la inferencia de tipos funciona para parámetros con valores predeterminados; no hay necesidad de escribir ``title: string = "unknown"`` , por ejemplo.
+
+**Procedimientos sobrecargados**
+
+Nim proporciona la capacidad de sobrecargar procedimientos similares a C ++
+
+.. code-block:: nim
+
+ proc  toString ( x :  int ) :  string  =  ... 
+ proc  toString ( x :  bool ) :  string  = 
+  if  x :  result  =  "true" 
+  else :  result  =  "false" 
+
+ echo  toString ( 13 )    # llama al toString (x: int) proc 
+ echo  toString ( true )  # llama al proceso toString (x: bool) proc
+
+
+(Tenga en cuenta que ``toString`` suele ser el operador $ en Nim). El compilador elige el proceso más apropiado para las llamadas a ``toString`` . Aquí no se explica cómo funciona exactamente este algoritmo de resolución de sobrecarga (se especificará en el manual en breve). Sin embargo, no conduce a sorpresas desagradables y se basa en un algoritmo de unificación bastante simple. Las llamadas ambiguas se reportan como errores.
+
+Los operadores
+La biblioteca Nim hace un uso intensivo de la sobrecarga, una de las razones es que cada operador como + es solo un proceso sobrecargado. El analizador le permite usar operadores en ``infix notation (a + b)``  o ``prefix notation (+ a)`` . Un operador de infijo siempre recibe dos argumentos, un operador de prefijo siempre uno. (Los operadores de Postfix no son posibles, porque esto sería ambiguo: ``a @ @ b significa (a) @ (@b)`` o ``( a @ ) @ (b)`` ? Siempre significa ``(a) @ (@b)`` , porque no hay operadores de postfix en Nim.)
+
+Aparte de unos cuantos incorporado operadores de palabras clave tales como y , o , no , los operadores siempre constan de los siguientes caracteres: `` + - * \ / <> = @ $ ~ &%! ? ^. |``
+
+Se permiten operadores definidos por el usuario. Nada le impide definir su propio operador `` @!? + ~ `` , Pero hacerlo puede reducir la legibilidad.
+
+La precedencia del operador está determinada por su primer carácter. Los detalles se pueden encontrar en el manual.
+
+Para definir un nuevo operador, encierre el operador en backticks "` `":
+
+
