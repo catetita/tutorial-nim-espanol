@@ -658,3 +658,16 @@ Volvamos al ejemplo de conteo simple:
   while res <= b:
     return res
     inc(res)
+
+Sin embargo, esto no funciona. El problema es que el procedimiento no solo debe regresar , sino que debe regresar y continuar después de que una iteración haya finalizado.
+Este retorno y continuar se llama una declaración de rendimiento . Ahora lo único que queda por hacer es reemplazar la palabra clave proc por iterador y aquí está: 
+nuestro primer iterador:
+
+.. code-block:: nim
+
+ iterator countup(a, b: int): int =
+  var res = a
+  while res <= b:
+    yield res
+    inc(res)
+
