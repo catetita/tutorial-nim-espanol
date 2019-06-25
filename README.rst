@@ -661,6 +661,7 @@ Volvamos al ejemplo de conteo simple:
 
 Sin embargo, esto no funciona. El problema es que el procedimiento no solo debe regresar , sino que debe regresar y continuar después de que una iteración haya finalizado.
 Este retorno y continuar se llama una declaración de rendimiento . Ahora lo único que queda por hacer es reemplazar la palabra clave proc por iterador y aquí está: 
+
 nuestro primer iterador:
 
 .. code-block:: nim
@@ -674,16 +675,16 @@ nuestro primer iterador:
 Los iteradores son muy similares a los procedimientos, pero hay varias diferencias importantes:
 
 * Los iteradores solo pueden ser llamados desde los bucles.
-* Los iteradores no pueden contener una declaración de devolución (y procs no pueden contener una declaración de rendimiento ).
-* Los iteradores no tienen una variable de resultado implícita .
+* Los iteradores no pueden contener una declaración de ``return`` (y procs no pueden contener una declaración de ``yield`` ).
+* Los iteradores no tienen una variable de ``result`` implícita .
 * Los iteradores no son compatibles con la recursión.
 * Los iteradores no se pueden declarar hacia delante, porque el compilador debe poder alinear un iterador. 
 (Esta restricción desaparecerá en una versión futura del compilador).
 
-Sin embargo, también puede usar un iterador de cierre para obtener un conjunto diferente de restricciones. 
+Sin embargo, también puede usar un iterador de ``closure`` para obtener un conjunto diferente de restricciones. 
 Ver iteradores de primera clase para más detalles. Los iteradores pueden tener el mismo nombre y parámetros que un proc, 
 ya que esencialmente tienen sus propios espacios de nombres. Por lo tanto, 
-es una práctica común ajustar los iteradores en procesos del mismo nombre que acumulan el resultado del iterador y lo devuelven como una secuencia, como división del módulo strutils .
+es una práctica común ajustar los iteradores en procesos del mismo nombre que acumulan el resultado del iterador y lo devuelven como una secuencia, como ``split`` del módulo strutils .
 
 **Tipos basicos**
 --------
@@ -695,3 +696,9 @@ Esta sección trata los tipos básicos integrados y las operaciones que están d
 El tipo booleano de Nim se llama ``bool``  y consiste en los dos valores predefinidos ``true`` y ``false`` . Las condiciones en while, if, elif y when deben ser de tipo bool.
 
 Los operadores ``not, and, or, xor, <, <=,>,> =,! =, ==`` están definidos para el tipo bool. El ``and`` y ``or`` los operadores de realizar la evaluación de cortocircuito. Por ejemplo:
+
+.. code-block:: nim
+
+ while p != nil and p.name != "xyz":
+  # p.name is not evaluated if p == nil
+  p = p.next
