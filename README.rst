@@ -642,3 +642,19 @@ Iteradores
 ------
 
 Volvamos al ejemplo de conteo simple:
+
+.. code-block:: nim
+
+ echo "Counting to ten: "
+ for i in countup(1, 10):
+  echo i
+
+  ¿ Se puede escribir un proceso de conteo que admita este bucle? Intentemos:
+
+.. code-block:: nim
+
+  proc countup(a, b: int): int =
+  var res = a
+  while res <= b:
+    return res
+    inc(res)
