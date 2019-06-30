@@ -27,232 +27,113 @@ customize this style sheet.
 Modified from Chad Skeeters' rst2html-style
 https://bitbucket.org/cskeeters/rst2html-style/
 
-Modified by Boyd Greenfield
+Modified by Boyd Greenfield and narimiran
 */
-/* SCSS variables */
-/* Text weights */
-/* Body colors */
-/* Text colors */
-/* Link colors */
-/* Syntax highlighting colors */
-/* Pct changes */
-/* Mixins */
-/* Body/layout */
+
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
 
-/* Where we want fancier font if available */
-h1, h2, h3, h4, h5, h6, p.module-desc, table.docinfo + blockquote p, table.docinfo blockquote p, h1 + blockquote p {
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif !important; }
-
-h1.title {
-  font-weight: 900; }
-
 body {
   font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: #444;
-  letter-spacing: 0.15px;
-  background-color: #FDFBFA; }
+  font-size: 1.125em;
+  line-height: 1.5;
+  color: #222;
+  background-color: #FCFCFC; }
 
 /* Skeleton grid */
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 1050px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   box-sizing: border-box; }
 
 .column,
 .columns {
   width: 100%;
   float: left;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-left: 1%;
+}
 
-/* For devices larger than 400px */
-@media (min-width: 400px) {
-  .container {
-    width: 100%;
-    padding: 0; } }
-/* For devices larger than 650px */
-@media (min-width: 650px) {
-  .container {
-    width: 100%; }
+.column:first-child,
+.columns:first-child {
+  margin-left: 0; }
 
-  .column,
-  .columns {
-    margin-left: 4%; }
+.three.columns {
+  width: 19%; }
 
-  .column:first-child,
-  .columns:first-child {
-    margin-left: 0; }
+.nine.columns {
+  width: 80.0%; }
 
-  .one.column,
-  .one.columns {
-    width: 4.66666666667%; }
+.twelve.columns {
+  width: 100%;
+  margin-left: 0; }
 
-  .two.columns {
-    width: 13.3333333333%; }
-
+@media screen and (max-width: 860px) {
   .three.columns {
-    width: 22%; }
-
-  .four.columns {
-    width: 30.6666666667%; }
-
-  .five.columns {
-    width: 39.3333333333%; }
-
-  .six.columns {
-    width: 48%; }
-
-  .seven.columns {
-    width: 56.6666666667%; }
-
-  .eight.columns {
-    width: 65.3333333333%; }
-
+    display: none;
+  }
   .nine.columns {
-    width: 74.0%; }
-
-  .ten.columns {
-    width: 82.6666666667%; }
-
-  .eleven.columns {
-    width: 91.3333333333%; }
-
-  .twelve.columns {
-    width: 100%;
-    margin-left: 0; }
-
-  .one-third.column {
-    width: 30.6666666667%; }
-
-  .two-thirds.column {
-    width: 65.3333333333%; } }
-/* Customer Overrides */
-.footer {
-  text-align: center;
-  color: #969696;
-  padding-top: 10%; }
-
-p.module-desc {
-  font-size: 1.1em;
-  color: #666666; }
-
-a.link-seesrc {
-  color: #aec7d2;
-  font-style: italic; }
-
-a.link-seesrc:hover {
-  color: #6c9aae; }
-
-#toc-list {
-  word-wrap: break-word; }
-
-ul.simple-toc {
-  list-style: none; }
-
-ul.simple-toc a.reference-toplevel {
-  font-weight: bold;
-  color: #0077b3; }
-
-ul.simple-toc-section {
-  list-style-type: circle;
-  color: #6c9aae; }
-
-ul.simple-toc-section a.reference {
-  color: #0077b3; }
+    width: 98.0%;
+  }
+  body {
+    font-size: 1em;
+    line-height: 1.35;
+  }
+}
 
 cite {
   font-style: italic !important; }
 
-dt > pre {
-  border-color: rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.3);
-  margin: 15px 0px 5px; }
-
-dd > pre {
-  border-color: rgba(0, 0, 0, 0.1);
-  background-color: whitesmoke;
-  margin-top: 8px; }
-
-.item > dd {
-  margin-left: 10px;
-  margin-bottom: 30px; }
-
-/* Nim line-numbered tables */
-.line-nums-table {
-  width: 100%;
-  table-layout: fixed; }
 
 /* Nim search input */
 div#searchInputDiv {
-  margin-bottom: 8px;
+  margin-bottom: 1em;
 }
-div#searchInputDiv input#searchInput {
-  width: 10em;
-}
-div.search-groupby {
-  margin-bottom: 8px;
+input#searchInput {
+  width: 80%;
 }
 
-table.line-nums-table {
-  border-radius: 4px;
-  border: 1px solid #cccccc;
-  background-color: whitesmoke;
-  border-collapse: separate;
-  margin-top: 15px;
-  margin-bottom: 25px; }
-
-.line-nums-table tbody {
-  border: none; }
-
-.line-nums-table td pre {
-  border: none;
-  background-color: transparent; }
-
-.line-nums-table td.blob-line-nums {
-  width: 28px; }
-
-.line-nums-table td.blob-line-nums pre {
-  color: #b0b0b0;
-  -webkit-filter: opacity(75%);
-  text-align: right;
-  border-color: transparent;
-  background-color: transparent;
-  padding-left: 0px;
-  margin-left: 0px;
-  padding-right: 0px;
-  margin-right: 0px; }
 
 /* Docgen styles */
 /* Links */
 a {
-  color: #0077b3;
-  text-decoration: none; }
+  color: #07b;
+  text-decoration: none;
+}
+
+a span.Identifier {
+  text-decoration: underline;
+  text-decoration-color: #aab;
+}
+
+a.reference-toplevel {
+  font-weight: bold;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: #222; }
+
+a.link-seesrc {
+  color: #607c9f;
+  font-size: 0.9em;
+  font-style: italic; }
 
 a:hover,
 a:focus {
-  color: #00334d;
+  color: #607c9f;
   text-decoration: underline; }
 
-a:visited {
-  color: #00334d; }
+a:hover span.Identifier {
+  color: #607c9f;
+}
 
-a:focus {
-  outline: thin dotted #2d2d2d;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px; }
-
-a:hover,
-a:active {
-  outline: 0; }
 
 sub,
 sup {
@@ -329,379 +210,258 @@ img {
 
   h2,
   h3 {
-    page-break-after: avoid; } }
-.img-rounded {
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px; }
+    page-break-after: avoid; }
+}
 
-.img-polaroid {
-  padding: 4px;
-  background-color: rgba(252, 248, 244, 0.75);
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
 
 p {
-  margin: 0 0 8px; }
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 
 small {
   font-size: 85%; }
 
 strong {
-  font-weight: 600; }
+  font-weight: 600;
+  font-size: 0.95em;
+  color: #3c3c3c;
+}
 
 em {
   font-style: italic; }
 
-cite {
-  font-style: normal; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  line-height: 20px;
-  color: inherit;
-  text-rendering: optimizelegibility; }
-
 h1 {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 400;
-  padding-bottom: .15em;
-  border-bottom: 1px solid #aaaaaa;
-  margin-top: 1.0em;
+  padding-bottom: .25em;
+  border-bottom: 1px solid #aaa;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
   line-height: 1.2em; }
 
 h1.title {
   padding-bottom: 1em;
   border-bottom: 0px;
-  font-size: 2.75em; }
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 0.75em;
+  margin-bottom: 0em;
+}
 
 h2 {
-  font-size: 1.5em;
-  margin-top: 1.5em; }
+  font-size: 1.3em;
+  margin-top: 2em; }
+
+h2.subtitle {
+  text-align: center; }
 
 h3 {
-  font-size: 1.3em;
+  font-size: 1.125em;
   font-style: italic;
-  margin-top: 0.75em; }
+  margin-top: 1.5em; }
 
 h4 {
-  font-size: 1.3em;
-  margin-top: 0.5em; }
+  font-size: 1.125em;
+  margin-top: 1em; }
 
 h5 {
-  font-size: 1.2em;
-  margin-top: 0.25em; }
+  font-size: 1.125em;
+  margin-top: 0.75em; }
 
 h6 {
   font-size: 1.1em; }
 
+
 ul,
 ol {
   padding: 0;
-  margin: 0 0 0px 15px; }
+  margin-top: 0.5em;
+  margin-left: 0.75em; }
 
 ul ul,
 ul ol,
 ol ol,
 ol ul {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  margin-left: 1.25em; }
 
 li {
-  line-height: 20px; }
-
-dl {
-  margin-bottom: 20px; }
-
-dt,
-dd {
-  line-height: 20px; }
-
-dt {
-  font-weight: bold; }
-
-dd {
-  margin-left: 10px;
-  margin-bottom: 26px; }
-
-hr {
-  margin: 20px 0;
-  border: 0;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #ffffff; }
-
-abbr[title],
-abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted #999999; }
-
-abbr.initialism {
-  font-size: 90%;
-  text-transform: uppercase; }
-
-blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 20px;
-  border-left: 5px solid #EFEBE0; }
-
-table.docinfo + blockquote, table.docinfo blockquote, h1 + blockquote {
-  border-left: 5px solid #c9c9c9;
+    list-style-type: circle;
 }
 
-table.docinfo + blockquote p, table.docinfo blockquote p, h1 + blockquote p {
-  margin-bottom: 0;
-  font-size: 15px;
-  font-weight: 200;
-  line-height: 1.5;
-  font-style: italic; }
+ul.simple-boot li {
+    list-style-type: none;
+    margin-left: 0em;
+    margin-bottom: 0.5em;
+}
 
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
-  content: ""; }
+ol.simple > li, ul.simple > li {
+  margin-bottom: 0.25em;
+  margin-left: 0.4em }
 
-address {
-  display: block;
-  margin-bottom: 20px;
-  font-style: normal;
-  line-height: 20px; }
+ul.simple.simple-toc > li {
+    margin-top: 1em;
+}
 
-code,
-pre {
-  font-family: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace;
-  padding: 0 3px 2px;
-  font-weight: 500;
-  font-size: 12px;
-  color: #444444;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px; }
+ul.simple-toc {
+  list-style: none;
+  font-size: 0.9em;
+  margin-left: -0.3em;
+  margin-top: 1em; }
+
+ul.simple-toc > li {
+    list-style-type: none;
+}
+
+ul.simple-toc-section {
+  list-style-type: circle;
+  margin-left: 1em;
+  color: #6c9aae; }
+
+
+ol.arabic {
+  list-style: decimal; }
+
+ol.loweralpha {
+  list-style: lower-alpha; }
+
+ol.upperalpha {
+  list-style: upper-alpha; }
+
+ol.lowerroman {
+  list-style: lower-roman; }
+
+ol.upperroman {
+  list-style: upper-roman; }
+
+ul.auto-toc {
+  list-style-type: none; }
+
+
+dl {
+  margin-bottom: 1.5em; }
+
+dt {
+  margin-bottom: -0.5em;
+  margin-left: 0.0em; }
+
+dd {
+  margin-left: 2.0em;
+  margin-bottom: 3.0em;
+  margin-top: 0.5em; }
+
+
+hr {
+  margin: 2em 0;
+  border: 0;
+  border-top: 1px solid #aaa; }
+
+blockquote {
+  font-size: 0.9em;
+  font-style: italic;
+  padding-left: 0.5em;
+  margin-left: 0;
+  border-left: 5px solid #bbc;
+}
 
 .pre {
   font-family: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace;
-  font-weight: 600;
-  /*color: #504da6;*/
+  font-weight: 500;
+  font-size: 0.85em;
+  background-color: #f0f3ff;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 4px;
 }
 
-code {
-  padding: 2px 4px;
-  color: #444444;
-  white-space: nowrap;
-  background-color: white;
-  border: 1px solid #777777; }
-
 pre {
+  font-family: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace;
+  color: #222;
+  font-weight: 500;
   display: inline-block;
   box-sizing: border-box;
-  min-width: calc(100% - 19.5px);
-  padding: 9.5px;
-  margin: 0.25em 10px 10px 10px;
-  font-size: 15px;
-  line-height: 20px;
+  min-width: 100%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.85em;
   white-space: pre !important;
   overflow-y: hidden;
   overflow-x: visible;
-  background-color: rgba(0, 0, 0, 0.01);
-  border: 1px solid #cccccc;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px; }
-
-pre.prettyprint {
-  margin-bottom: 20px; }
-
-pre code {
-  padding: 0;
-  color: inherit;
-  white-space: pre;
-  overflow-x: visible;
-  background-color: transparent;
-  border: 0; }
+  background-color: ghostwhite;
+  border: 1px solid #dde;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px; }
 
 .pre-scrollable {
   max-height: 340px;
   overflow-y: scroll; }
 
+
+/* Nim line-numbered tables */
+.line-nums-table {
+  width: 100%;
+  table-layout: fixed; }
+
+table.line-nums-table {
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background-color: ghostwhite;
+  border-collapse: separate;
+  margin-top: 15px;
+  margin-bottom: 25px; }
+
+.line-nums-table tbody {
+  border: none; }
+
+.line-nums-table td pre {
+  border: none;
+  background-color: transparent; }
+
+.line-nums-table td.blob-line-nums {
+  width: 28px; }
+
+.line-nums-table td.blob-line-nums pre {
+  color: #b0b0b0;
+  -webkit-filter: opacity(75%);
+  text-align: right;
+  border-color: transparent;
+  background-color: transparent;
+  padding-left: 0px;
+  margin-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px; }
+
+
 table {
   max-width: 100%;
   background-color: transparent;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
   border-collapse: collapse;
-  border-spacing: 0; }
-
-table th, table td {
-  padding: 0px 8px 0px;
+  border-color: #ccc;
+  border-spacing: 0;
+  font-size: 0.9em;
 }
 
-.table {
-  width: 100%;
-  margin-bottom: 20px; }
+table th, table td {
+  padding: 0px 0.5em 0px;
+}
 
-.table th,
-.table td {
-  padding: 8px;
-  line-height: 20px;
-  text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #444444; }
-
-.table th {
+table th {
+  background-color: #e8e8e8;
   font-weight: bold; }
 
-.table thead th {
-  vertical-align: bottom; }
+table th.docinfo-name {
+    background-color: transparent;
+}
 
-.table caption + thead tr:first-child th,
-.table caption + thead tr:first-child td,
-.table colgroup + thead tr:first-child th,
-.table colgroup + thead tr:first-child td,
-.table thead:first-child tr:first-child th,
-.table thead:first-child tr:first-child td {
-  border-top: 0; }
+table tr:hover {
+  background-color: ghostwhite; }
 
-.table tbody + tbody {
-  border-top: 2px solid #444444; }
-
-.table .table {
-  background-color: rgba(252, 248, 244, 0.75); }
-
-.table-condensed th,
-.table-condensed td {
-  padding: 4px 5px; }
-
-.table-bordered {
-  border: 1px solid #444444;
-  border-collapse: separate;
-  *border-collapse: collapse;
-  border-left: 0;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px; }
-
-.table-bordered th,
-.table-bordered td {
-  border-left: 1px solid #444444; }
-
-.table-bordered caption + thead tr:first-child th,
-.table-bordered caption + tbody tr:first-child th,
-.table-bordered caption + tbody tr:first-child td,
-.table-bordered colgroup + thead tr:first-child th,
-.table-bordered colgroup + tbody tr:first-child th,
-.table-bordered colgroup + tbody tr:first-child td,
-.table-bordered thead:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child td {
-  border-top: 0; }
-
-.table-bordered thead:first-child tr:first-child > th:first-child,
-.table-bordered tbody:first-child tr:first-child > td:first-child,
-.table-bordered tbody:first-child tr:first-child > th:first-child {
-  -webkit-border-top-left-radius: 4px;
-  border-top-left-radius: 4px;
-  -moz-border-radius-topleft: 4px; }
-
-.table-bordered thead:first-child tr:first-child > th:last-child,
-.table-bordered tbody:first-child tr:first-child > td:last-child,
-.table-bordered tbody:first-child tr:first-child > th:last-child {
-  -webkit-border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
-  -moz-border-radius-topright: 4px; }
-
-.table-bordered thead:last-child tr:last-child > th:first-child,
-.table-bordered tbody:last-child tr:last-child > td:first-child,
-.table-bordered tbody:last-child tr:last-child > th:first-child,
-.table-bordered tfoot:last-child tr:last-child > td:first-child,
-.table-bordered tfoot:last-child tr:last-child > th:first-child {
-  -webkit-border-bottom-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomleft: 4px; }
-
-.table-bordered thead:last-child tr:last-child > th:last-child,
-.table-bordered tbody:last-child tr:last-child > td:last-child,
-.table-bordered tbody:last-child tr:last-child > th:last-child,
-.table-bordered tfoot:last-child tr:last-child > td:last-child,
-.table-bordered tfoot:last-child tr:last-child > th:last-child {
-  -webkit-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  -moz-border-radius-bottomright: 4px; }
-
-.table-bordered tfoot + tbody:last-child tr:last-child td:first-child {
-  -webkit-border-bottom-left-radius: 0;
-  border-bottom-left-radius: 0;
-  -moz-border-radius-bottomleft: 0; }
-
-.table-bordered tfoot + tbody:last-child tr:last-child td:last-child {
-  -webkit-border-bottom-right-radius: 0;
-  border-bottom-right-radius: 0;
-  -moz-border-radius-bottomright: 0; }
-
-.table-bordered caption + thead tr:first-child th:first-child,
-.table-bordered caption + tbody tr:first-child td:first-child,
-.table-bordered colgroup + thead tr:first-child th:first-child,
-.table-bordered colgroup + tbody tr:first-child td:first-child {
-  -webkit-border-top-left-radius: 4px;
-  border-top-left-radius: 4px;
-  -moz-border-radius-topleft: 4px; }
-
-.table-bordered caption + thead tr:first-child th:last-child,
-.table-bordered caption + tbody tr:first-child td:last-child,
-.table-bordered colgroup + thead tr:first-child th:last-child,
-.table-bordered colgroup + tbody tr:first-child td:last-child {
-  -webkit-border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
-  -moz-border-radius-topright: 4px; }
-
-table.docutils th {
-  background-color: #e8e8e8; }
-
-table.docutils tr:hover {
-  background-color: whitesmoke; }
-
-.table-striped tbody > tr:nth-child(odd) > td,
-.table-striped tbody > tr:nth-child(odd) > th {
-  background-color: rgba(252, 248, 244, 0.75); }
-
-.table-hover tbody tr:hover > td,
-.table-hover tbody tr:hover > th {
-  background-color: rgba(241, 222, 204, 0.75); }
-
-table td[class*="span"],
-table th[class*="span"],
-.row-fluid table td[class*="span"],
-.row-fluid table th[class*="span"] {
-  display: table-cell;
-  float: none;
-  margin-left: 0; }
-
-.hero-unit {
-  padding: 60px;
-  margin-bottom: 30px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  color: inherit;
-  background-color: rgba(230, 197, 164, 0.75);
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px; }
-
-.hero-unit h1 {
-  margin-bottom: 0;
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-  color: inherit; }
-
-.hero-unit li {
-  line-height: 30px; }
 
 /* rst2html default used to remove borders from tables and images */
 .borderless, table.borderless td, table.borderless th {
@@ -722,10 +482,6 @@ table.borderless td, table.borderless th {
 .hidden {
   display: none; }
 
-a.toc-backref {
-  text-decoration: none;
-  color: #444444; }
-
 blockquote.epigraph {
   margin: 2em 5em; }
 
@@ -735,85 +491,6 @@ dl.docutils dd {
 object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
   overflow: hidden; }
 
-/* Uncomment (and remove this text!) to get bold-faced definition list terms
-dl.docutils dt {
-  font-weight: bold }
-*/
-div.abstract {
-  margin: 2em 5em; }
-
-div.abstract p.topic-title {
-  font-weight: bold;
-  text-align: center; }
-
-div.admonition, div.attention, div.caution, div.danger, div.error,
-div.hint, div.important, div.note, div.tip, div.warning {
-  margin: 2em;
-  border: medium outset;
-  padding: 1em; }
-
-div.note, div.warning {
-  margin: 1.5em 0px;
-  border: none; }
-
-div.note p.admonition-title,
-div.warning p.admonition-title {
-  display: none; }
-
-/* Clearfix
- * http://css-tricks.com/snippets/css/clear-fix/
- */
-div.note:after,
-div.warning:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-div.note p:before,
-div.warning p:before {
-  display: block;
-  float: left;
-  font-size: 4em;
-  line-height: 1em;
-  margin-right: 20px;
-  margin-left: 0em;
-  margin-top: -10px;
-  content: '\0270D';
-  /*handwriting*/ }
-
-div.warning p:before {
-  content: '\026A0';
-  /*warning*/ }
-
-div.admonition p.admonition-title, div.hint p.admonition-title,
-div.important p.admonition-title, div.note p.admonition-title,
-div.tip p.admonition-title {
-  font-weight: bold;
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif; }
-
-div.attention p.admonition-title, div.caution p.admonition-title,
-div.danger p.admonition-title, div.error p.admonition-title,
-div.warning p.admonition-title, .code .error {
-  color: #b30000;
-  font-weight: bold;
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif; }
-
-/* Uncomment (and remove this text!) to get reduced vertical space in
-   compound paragraphs.
-div.compound .compound-first, div.compound .compound-middle {
-  margin-bottom: 0.5em }
-
-div.compound .compound-last, div.compound .compound-middle {
-  margin-top: 0.5em }
-*/
-div.dedication {
-  margin: 2em 5em;
-  text-align: center;
-  font-style: italic; }
-
-div.dedication p.topic-title {
-  font-weight: bold;
-  font-style: normal; }
 
 div.figure {
   margin-left: 2em;
@@ -821,7 +498,13 @@ div.figure {
 
 div.footer, div.header {
   clear: both;
+  text-align: center;
+  color: #666;
   font-size: smaller; }
+
+div.footer {
+    padding-top: 5em;
+}
 
 div.line-block {
   display: block;
@@ -833,45 +516,24 @@ div.line-block div.line-block {
   margin-bottom: 0;
   margin-left: 1.5em; }
 
-div.sidebar {
-  margin: 0 0 0.5em 1em;
-  border: medium outset;
-  padding: 1em;
-  background-color: rgba(252, 248, 244, 0.75);
-  width: 40%;
-  float: right;
-  clear: right; }
-
-div.sidebar p.rubric {
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
-  font-size: medium; }
-
-div.system-messages {
-  margin: 5em; }
-
-div.system-messages h1 {
-  color: #b30000; }
-
-div.system-message {
-  border: medium outset;
-  padding: 1em; }
-
-div.system-message p.system-message-title {
-  color: #b30000;
-  font-weight: bold; }
-
 div.topic {
   margin: 2em; }
 
-h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
-h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
-  margin-top: 0.4em; }
+div.search_results {
+  background-color: antiquewhite;
+  margin: 3em;
+  padding: 1em;
+  border: 1px solid #4d4d4d;
+}
 
-h1.title {
-  text-align: center; }
+div#global-links ul {
+  margin-left: 0;
+  list-style-type: none;
+}
 
-h2.subtitle {
-  text-align: center; }
+div#global-links > simple-boot {
+    margin-left: 3em;
+}
 
 hr.docutils {
   width: 75%; }
@@ -905,30 +567,6 @@ img.align-center, .figure.align-center, object.align-center {
 div.align-right {
   text-align: inherit; }
 
-/* div.align-center * { */
-/*   text-align: left } */
-
-ul.simple > li {
-  margin-bottom: 0.5em }
-
-ol.simple, ul.simple {
-  margin-bottom: 1em; }
-
-ol.arabic {
-  list-style: decimal; }
-
-ol.loweralpha {
-  list-style: lower-alpha; }
-
-ol.upperalpha {
-  list-style: upper-alpha; }
-
-ol.lowerroman {
-  list-style: lower-roman; }
-
-ol.upperroman {
-  list-style: upper-roman; }
-
 p.attribution {
   text-align: right;
   margin-left: 50%; }
@@ -948,15 +586,6 @@ p.rubric {
   font-size: larger;
   color: maroon;
   text-align: center; }
-
-p.sidebar-title {
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: larger; }
-
-p.sidebar-subtitle {
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
-  font-weight: bold; }
 
 p.topic-title {
   font-weight: bold; }
@@ -997,21 +626,13 @@ pre.code .inserted, code .inserted {
   background-color: #A3D289; }
 
 span.classifier {
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   font-style: oblique; }
 
 span.classifier-delimiter {
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
   font-weight: bold; }
-
-span.interpreted {
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif; }
 
 span.option {
   white-space: nowrap; }
-
-span.pre {
-  white-space: pre; }
 
 span.problematic {
   color: #b30000; }
@@ -1019,44 +640,6 @@ span.problematic {
 span.section-subtitle {
   /* font-size relative to parent (h1..h6 element) */
   font-size: 80%; }
-
-table.citation {
-  border-left: solid 1px #666666;
-  margin-left: 1px; }
-
-table.docinfo {
-  margin: 0em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif !important;
-  color: #444444; }
-
-table.docutils {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em; }
-
-table.footnote {
-  border-left: solid 1px #2d2d2d;
-  margin-left: 1px; }
-
-table.docutils td, table.docutils th,
-table.docinfo td, table.docinfo th {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  vertical-align: top; }
-
-table.docutils th.field-name, table.docinfo th.docinfo-name {
-  font-weight: 700;
-  text-align: left;
-  white-space: nowrap;
-  padding-left: 0; }
-
-h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
-h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
-  font-size: 100%; }
-
-ul.auto-toc {
-  list-style-type: none; }
 
 span.DecNumber {
   color: #252dbe; }
@@ -1074,7 +657,7 @@ span.FloatNumber {
   color: #252dbe; }
 
 span.Identifier {
-  color: #3b3b3b; }
+  color: #222; }
 
 span.Keyword {
   font-weight: 600;
@@ -1139,37 +722,22 @@ dt pre > span.Identifier, dt pre > span.Operator {
   color: #155da4;
   font-weight: 700; }
 
-dt pre > span.Identifier ~ span.Identifier, dt pre > span.Operator ~ span.Identifier {
-  color: inherit;
-  font-weight: inherit; }
-
-dt pre > span.Operator ~ span.Identifier {
+dt pre > span.Keyword ~ span.Identifier, dt pre > span.Identifier ~ span.Identifier,
+dt pre > span.Operator ~ span.Identifier, dt pre > span.Other ~ span.Identifier {
   color: inherit;
   font-weight: inherit; }
 
 /* Nim sprite for the footer (taken from main page favicon) */
 .nim-sprite {
   display: inline-block;
-  height: 12px;
-  width: 12px;
+  height: 16px;
+  width: 16px;
   background-position: 0 0;
-  background-size: 12px 12px;
+  background-size: 16px 16px;
   -webkit-filter: opacity(50%);
   background-repeat: no-repeat;
   background-image: url("data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAUAAAAF////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAIAAABbAAAAlQAAAKIAAACbAAAAmwAAAKIAAACVAAAAWwAAAAL///8A////AP///wD///8A////AAAAABQAAADAAAAAYwAAAA3///8A////AP///wD///8AAAAADQAAAGMAAADAAAAAFP///wD///8A////AP///wAAAACdAAAAOv///wD///8A////AP///wD///8A////AP///wD///8AAAAAOgAAAJ3///8A////AP///wAAAAAnAAAAcP///wAAAAAoAAAASv///wD///8A////AP///wAAAABKAAAAKP///wAAAABwAAAAJ////wD///8AAAAAgQAAABwAAACIAAAAkAAAAJMAAACtAAAAFQAAABUAAACtAAAAkwAAAJAAAACIAAAAHAAAAIH///8A////AAAAAKQAAACrAAAAaP///wD///8AAAAARQAAANIAAADSAAAARf///wD///8AAAAAaAAAAKsAAACk////AAAAADMAAACcAAAAnQAAABj///8A////AP///wAAAAAYAAAAGP///wD///8A////AAAAABgAAACdAAAAnAAAADMAAAB1AAAAwwAAAP8AAADpAAAAsQAAAE4AAAAb////AP///wAAAAAbAAAATgAAALEAAADpAAAA/wAAAMMAAAB1AAAAtwAAAOkAAAD/AAAA/wAAAP8AAADvAAAA3gAAAN4AAADeAAAA3gAAAO8AAAD/AAAA/wAAAP8AAADpAAAAtwAAAGUAAAA/AAAA3wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADfAAAAPwAAAGX///8A////AAAAAEgAAADtAAAAvwAAAL0AAADGAAAA7wAAAO8AAADGAAAAvQAAAL8AAADtAAAASP///wD///8A////AP///wD///8AAAAAO////wD///8A////AAAAAIcAAACH////AP///wD///8AAAAAO////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AAD4HwAA7/cAAN/7AAD//wAAoYUAAJ55AACf+QAAh+EAAAAAAADAAwAA4AcAAP5/AAD//wAA//8AAA==");
   margin-bottom: -5px; }
-
-div.search_results {
-  background-color: antiquewhite;
-  margin: 3em;
-  padding: 1em;
-  border: 1px solid #4d4d4d;
-}
-
-div#global-links ul {
-  margin-left: 0;
-  list-style-type: none;
-}
 
 span.pragmadots {
   /* Position: relative frees us up to make the dots
@@ -1178,18 +746,14 @@ span.pragmadots {
   position: relative;
   /* 1px down looks slightly nicer */
   top: 1px;
-
   padding: 2px;
-  background-color: #D3D3D3;
+  background-color: #e8e8e8;
   border-radius: 4px;
   margin: 0 2px;
   cursor: pointer;
-
-  /* For some reason on Chrome, making the font size
-  smaller than 1em is causing the parent container to
-  bulge slightly. So, we're stuck with inheriting 1em,
-  which is sad, because 0.8em looks better... */
+  font-size: 0.8em;
 }
+
 span.pragmadots:hover {
   background-color: #DBDBDB;
 }
@@ -1197,6 +761,10 @@ span.pragmawrap {
   display: none;
 }
 
+span.attachedType {
+  display: none;
+  visibility: hidden;
+}
 </style>
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -1221,8 +789,8 @@ function main() {
   <div class="container">
     <h1 class="title">README</h1>
     
-<h1 id="tutorial-de-nim-parte-i">Tutorial de Nim (Parte I)</h1><img src="https://raw.githubusercontent.com/catetita/tutorial-nim-espanol/master/img.png"/>
-<h2 id="introducción">Introducción</h2><p>Este documento es un tutorial para el lenguaje de programación Nim . Este tutorial asume que está familiarizado con los conceptos básicos de programación como variables, tipos o declaraciones, pero se mantiene muy básico. El manual contiene muchos más ejemplos de las características avanzadas del lenguaje. Todos los ejemplos de código en este tutorial, así como los que se encuentran en el resto de la documentación de Nim, siguen la guía de estilo de Nim .</p>
+<h1 id="tutorial-de-nim"><strong>Tutorial de Nim</strong></h1><img src="https://raw.githubusercontent.com/catetita/tutorial-nim-espanol/master/img.png"/>
+<h2 id="introducción">Introducción</h2><p>Este documento es un tutorial para el lenguaje de programación Nim. Este tutorial asume que está familiarizado con los conceptos básicos de programación, como variables, tipos o declaraciones, pero se mantiene muy básico. El manual contiene muchos más ejemplos de las características avanzadas del lenguaje. Todos los ejemplos de código en este tutorial, así como los que se encuentran en el resto de la documentación de Nim, siguen la guía de estilo de Nim .</p>
 
 <h2 id="el-primer-programa">El primer programa</h2><p>Comenzamos el recorrido con un programa modificado &quot;hola mundo&quot;:</p>
 <pre class="listing"><span class="Comment"># This is a comment</span>
@@ -1230,30 +798,568 @@ function main() {
 <span class="Keyword">var</span> <span class="Identifier">name</span><span class="Punctuation">:</span> <span class="Identifier">string</span> <span class="Operator">=</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="StringLit">&quot;Hi, &quot;</span><span class="Punctuation">,</span> <span class="Identifier">name</span><span class="Punctuation">,</span> <span class="StringLit">&quot;!&quot;</span></pre>
 <h2 id="elementos-léxicos">Elementos léxicos</h2><p>Veamos los elementos léxicos de Nim con más detalle: al igual que otros lenguajes de programación, Nim consta de literales (de cadena), identificadores, palabras clave, comentarios, operadores y otros signos de puntuación.</p>
-
-<h2 id="literales-de-cuerdas-y-personajes">Literales de cuerdas y personajes</h2><ul class="simple"><li>Los literales de cadena están encerrados entre comillas dobles; Literales de caracteres en comillas simples. Los caracteres especiales se escapan con : n significa nueva línea, t significa tabulador, etc. También hay literales de cadena en bruto</li>
+<p><strong>Literales de cuerdas y personajes</strong></p>
+<ul class="simple"><li>Los literales de cadena están encerrados entre comillas dobles;</li>
 </ul>
+<p>Literales de caracteres en comillas simples. Los caracteres especiales se escapan con <tt class="docutils literal"><span class="pre">\</span></tt>, <tt class="docutils literal"><span class="pre">\n</span></tt> significa nueva línea, <tt class="docutils literal"><span class="pre">\t</span></tt> significa tabulador, etc. También hay literales de cadena en bruto.</p>
 <pre class="listing"><span class="RawData">r&quot;C:\program files\nim&quot;&quot;</span></pre><ul class="simple"><li>En literales crudos, la barra invertida no es un personaje de escape.</li>
 </ul>
-<p>La tercera y última forma de escribir literales de cadena son literales de cadena larga . Están escritos con tres citas: &quot;&quot; &quot;...&quot; &quot;&quot; ; pueden abarcar varias líneas y el no es un carácter de escape tampoco. Son muy útiles para incrustar plantillas de código HTML, por ejemplo.</p>
-
-<h2 id="comentarios">Comentarios</h2><p>Los comentarios comienzan en cualquier lugar fuera de una cadena o literal de caracteres con el # de carácter de hash . Los comentarios de documentación comienzan con ## :</p>
+<p>La tercera y última forma de escribir literales de cadena son literales de cadena larga. Están escritos con tres citas: <tt class="docutils literal"><span class="pre">&quot;&quot;&quot;...&quot;&quot;&quot;</span></tt>; Pueden abarcar varias líneas y el```` no es un carácter de escape tampoco. Son muy útiles para incrustar plantillas de código HTML, por ejemplo.</p>
+<p><strong>Comentarios</strong></p>
+<p>Los comentarios comienzan en cualquier lugar fuera de una cadena o literal de caracteres con el <tt class="docutils literal"><span class="pre">#</span></tt> de carácter de hash. Los comentarios de documentación comienzan con <tt class="docutils literal"><span class="pre">##</span></tt>:</p>
 <pre class="listing"><span class="Comment"># A comment.</span>
-<span class="Keyword">var</span> <span class="Identifier">myVariable</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Comment">## a documentation comment</span></pre><p>Los comentarios de documentación son tokens; solo se permiten en ciertos lugares en el archivo de entrada ya que pertenecen al árbol de sintaxis! Esta característica permite generadores de documentación más simples.</p>
-<p>Los comentarios de varias líneas se inician con # [ y terminan con ] # . Los comentarios multilínea también pueden ser anidados.</p>
+<span class="Keyword">var</span> <span class="Identifier">myVariable</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Comment">## a documentation comment</span></pre><p>Los comentarios de documentación son tokens; Solo se permiten en ciertos lugares en el archivo de entrada ya que pertenecen al árbol de sintaxis! Esta característica permite generadores de documentación más simples.</p>
+<p>Los comentarios de varias líneas se inician con <tt class="docutils literal"><span class="pre">#[</span></tt> y terminan con <tt class="docutils literal"><span class="pre">]#</span></tt>. Los comentarios multilínea también pueden ser anidados.</p>
 <pre class="listing"><span class="LongComment">#[
-You can have any Nim code text commented
-out inside this with no indentation restrictions.
-     yes(&quot;May I ask a pointless question?&quot;)
- #[
+  You can have any Nim code text commented
+  out inside this with no indentation restrictions.
+    yes(&quot;May I ask a pointless question?&quot;)
+  #[
     Note: these can be nested!!
- ]#
-]#</span></pre>
-<h2 id="números">Números</h2>
-<h2 id="la-sentencia-var">La sentencia <strong>var</strong></h2>
-<h2 id="la-declaración-de-asignación">La declaración de asignación</h2>
-<h2 id="constantes">Constantes</h2>
-<h2 id="la-declaración-de-let">La declaración de <em>let</em></h2><p>Declaraciones de flujo de control --------------</p>
+  ]#
+]#</span></pre><p><strong>Números</strong></p>
+<p>Los literales numéricos se escriben como en la mayoría de los otros idiomas. Como un giro especial, se permiten guiones bajos para una mejor legibilidad: <tt class="docutils literal"><span class="pre">1_000_000`` (un millón). Un número que contiene un punto (o 'e' o 'E') es un literal de punto flotante: ``1.0e9`` (mil millones). Los literales hexadecimales están prefijados con ``0x</span></tt>, los literales binarios con ``0b`` y los literales octales con ``0o``. Un cero inicial solo no produce un octal.</p>
+
+<h2 id="la-sentencia-var">La sentencia <strong>var</strong></h2><p>La declaración <tt class="docutils literal"><span class="pre">var</span></tt> declara una nueva variable local o global:</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">:</span> <span class="Identifier">int</span>  <span class="Comment"># declares x and y to have the type ``int``</span></pre><p>La Indentacion puede ser usada luego de <tt class="docutils literal"><span class="pre">var</span></tt> para agrupar un conjunto de variables:</p>
+<pre class="listing"><span class="Keyword">var</span>
+  <span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span> <span class="Punctuation">:</span><span class="Identifier">int</span>
+  <span class="Comment"># a comment</span>
+  <span class="Identifier">a</span><span class="Punctuation">,</span> <span class="Identifier">b</span><span class="Punctuation">,</span> <span class="Identifier">c</span> <span class="Punctuation">:</span><span class="Identifier">string</span></pre>
+<h2 id="la-declaración-de-asignación">La declaración de asignación</h2><p>La declaración de asignación asigna un nuevo valor a una variable o, más generalmente, a una ubicación de almacenamiento:</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="StringLit">&quot;abc&quot;</span> <span class="Comment"># introduces a new variable `x` and assigns a value to it</span>
+<span class="Identifier">x</span> <span class="Operator">=</span> <span class="StringLit">&quot;xyz&quot;</span>     <span class="Comment"># assigns a new value to `x`</span></pre><p><tt class="docutils literal"><span class="pre">=</span></tt> es el operador de asignación . El operador de asignación puede estar sobrecargado. Puede declarar múltiples variables con una sola instrucción de asignación y todas las variables tendrán el mismo valor:</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span> <span class="Operator">=</span> <span class="DecNumber">3</span>  <span class="Comment"># assigns 3 to the variables `x` and `y`</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;x &quot;</span><span class="Punctuation">,</span> <span class="Identifier">x</span>  <span class="Comment"># outputs &quot;x 3&quot;</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;y &quot;</span><span class="Punctuation">,</span> <span class="Identifier">y</span>  <span class="Comment"># outputs &quot;y 3&quot;</span>
+<span class="Identifier">x</span> <span class="Operator">=</span> <span class="DecNumber">42</span>        <span class="Comment"># changes `x` to 42 without changing `y`</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;x &quot;</span><span class="Punctuation">,</span> <span class="Identifier">x</span>  <span class="Comment"># outputs &quot;x 42&quot;</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;y &quot;</span><span class="Punctuation">,</span> <span class="Identifier">y</span>  <span class="Comment"># outputs &quot;y 3&quot;</span></pre><p>Tenga en cuenta que la declaración de múltiples variables con una sola asignación que llama a un procedimiento puede tener resultados inesperados: El compilador desenrollará las asignaciones y terminará llamando al procedimiento varias veces. Si el resultado del procedimiento depende de los efectos secundarios, ¡sus variables pueden terminar teniendo valores diferentes!. Para seguridad, utilice procedimientos libres de efectos secundarios si realiza múltiples tareas.</p>
+
+<h2 id="constantes">Constantes</h2><p>Las constantes son símbolos que están vinculados a un valor. El valor de la constante no puede cambiar. El compilador debe poder evaluar la expresión en una declaración constante en tiempo de compilación:</p>
+<pre class="listing"><span class="Keyword">const</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="StringLit">&quot;abc&quot;</span> <span class="Comment"># the constant x contains the string &quot;abc&quot;</span></pre><p>La sangría se puede usar después de la palabra clave const para enumerar una sección completa de constantes:</p>
+<pre class="listing"><span class="Keyword">const</span>
+  <span class="Identifier">x</span> <span class="Operator">=</span> <span class="DecNumber">1</span>
+  <span class="Comment"># a comment can occur here too</span>
+  <span class="Identifier">y</span> <span class="Operator">=</span> <span class="DecNumber">2</span>
+  <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">y</span> <span class="Operator">+</span> <span class="DecNumber">5</span> <span class="Comment"># computations are possible</span></pre>
+<h2 id="la-declaración-de-let">La declaración de <em>let</em></h2><p>La instrucción <tt class="docutils literal"><span class="pre">let</span></tt> funciona igual que la instrucción <tt class="docutils literal"><span class="pre">var</span></tt>, pero los símbolos declarados son variables de asignación única: después de la inicialización, su valor no puede cambiar:</p>
+<pre class="listing"><span class="Keyword">let</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="StringLit">&quot;abc&quot;</span> <span class="Comment"># introduces a new variable `x` and binds a value to it</span>
+<span class="Identifier">x</span> <span class="Operator">=</span> <span class="StringLit">&quot;xyz&quot;</span>     <span class="Comment"># Illegal: assignment to `x`</span></pre><p>La diferencia entre <tt class="docutils literal"><span class="pre">let</span></tt> y <tt class="docutils literal"><span class="pre">const</span></tt> es: Permite introducir una variable que no se puede volver a asignar, <tt class="docutils literal"><span class="pre">const</span></tt> significa &quot;imponer la evaluación del tiempo de compilación y colocarla en una sección de datos&quot;:</p>
+<pre class="listing"><span class="Keyword">const</span> <span class="Identifier">input</span> <span class="Operator">=</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span> <span class="Comment"># Error: constant expression expected</span></pre><pre class="listing"><span class="Keyword">let</span> <span class="Identifier">input</span> <span class="Operator">=</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span>   <span class="Comment"># works</span></pre>
+<h2 id="declaraciones-de-flujo-de-control">Declaraciones de flujo de control</h2><p>El programa de saludos consta de 3 instrucciones que se ejecutan de forma secuencial. Solo los programas más primitivos pueden salirse con la suya: También se necesitan ramificaciones y bucles.</p>
+<p><strong>if declaración</strong></p>
+<p>La instrucción <tt class="docutils literal"><span class="pre">if</span></tt> es una forma de ramificar el flujo de control:</p>
+<pre class="listing"><span class="Keyword">let</span> <span class="Identifier">name</span> <span class="Operator">=</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span>
+<span class="Keyword">if</span> <span class="Identifier">name</span> <span class="Operator">==</span> <span class="StringLit">&quot;&quot;</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;Poor soul, you lost your name?&quot;</span>
+<span class="Keyword">elif</span> <span class="Identifier">name</span> <span class="Operator">==</span> <span class="StringLit">&quot;name&quot;</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;Very funny, your name is name.&quot;</span>
+<span class="Keyword">else</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;Hi, &quot;</span><span class="Punctuation">,</span> <span class="Identifier">name</span></pre><p>Puede haber cero o más partes <tt class="docutils literal"><span class="pre">elif</span></tt>, y la <tt class="docutils literal"><span class="pre">else</span></tt> parte es opcional. La palabra clave <tt class="docutils literal"><span class="pre">elif</span></tt> es la abreviatura de <tt class="docutils literal"><span class="pre">else</span></tt> <tt class="docutils literal"><span class="pre">if</span></tt>, y es útil para evitar una sangría excesiva. (La <tt class="docutils literal"><span class="pre">&quot;&quot;</span></tt> es la cadena vacía. No contiene caracteres.)</p>
+<p><strong>case Declaración</strong></p>
+<p>Otra forma de ramificación es proporcionada por la declaración de <tt class="docutils literal"><span class="pre">case</span></tt>. Una declaración de caso es una rama múltiple:</p>
+<pre class="listing"><span class="Keyword">let</span> <span class="Identifier">name</span> <span class="Operator">=</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span>
+<span class="Keyword">case</span> <span class="Identifier">name</span>
+<span class="Keyword">of</span> <span class="StringLit">&quot;&quot;</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;Poor soul, you lost your name?&quot;</span>
+<span class="Keyword">of</span> <span class="StringLit">&quot;name&quot;</span><span class="Punctuation">:</span>
+   <span class="StringLit">&quot;Very funny, your name is name.&quot;</span>
+<span class="Keyword">of</span> <span class="StringLit">&quot;Dave&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;Frank&quot;</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;Cool name!&quot;</span>
+<span class="Keyword">else</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;Hi, &quot;</span><span class="Punctuation">,</span> <span class="Identifier">name</span></pre><p>Como se puede ver, para una <tt class="docutils literal"><span class="pre">of</span></tt> rama una coma separó la lista de valores también está permitido.</p>
+<p>La declaración de caso puede tratar con enteros, otros tipos ordinales y cadenas. (Lo que un tipo ordinal es se explicará pronto). Para enteros u otros tipos de ordinales también son posibles rangos de valores:</p>
+<pre class="listing"><span class="Comment"># this statement will be explained later:</span>
+<span class="Keyword">from</span> <span class="Identifier">strutils</span> <span class="Keyword">import</span> <span class="Identifier">parseInt</span>
+
+<span class="Identifier">echo</span> <span class="StringLit">&quot;A number please: &quot;</span>
+<span class="Keyword">let</span> <span class="Identifier">n</span> <span class="Operator">=</span> <span class="Identifier">parseInt</span><span class="Punctuation">(</span><span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Keyword">case</span> <span class="Identifier">n</span>
+<span class="Keyword">of</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="FloatNumber">4.</span><span class="Operator">.</span><span class="DecNumber">7</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;The number is in the set: {0, 1, 2, 4, 5, 6, 7}&quot;</span>
+<span class="Keyword">of</span> <span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">8</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;The number is 3 or 8&quot;</span></pre><p>Sin embargo, el código anterior no se compila: Emotivo es que debe cubrir todos los valores que <tt class="docutils literal"><span class="pre">n</span></tt> puede contener, pero el código solo maneja los valores <tt class="docutils literal"><span class="pre">0..8</span></tt>. Dado que no es muy práctico enumerar todos los demás enteros posibles (aunque es posible gracias a la notación de rango), solucionamos esto indicando al compilador que por cada otro valor no se debe hacer nada:</p>
+<pre class="listing"><span class="Keyword">case</span> <span class="Identifier">n</span>
+<span class="Keyword">of</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="FloatNumber">4.</span><span class="Operator">.</span><span class="DecNumber">7</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;The number is in the set: {0, 1, 2, 4, 5, 6, 7}&quot;</span>
+<span class="Keyword">of</span> <span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">8</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;The number is 3 or 8&quot;</span>
+<span class="Keyword">else</span><span class="Punctuation">:</span> <span class="Keyword">discard</span></pre><p>La declaración de <tt class="docutils literal"><span class="pre">discard</span></tt> vacía es una declaración de no hacer nada. El compilador sabe que una declaración de caso con una parte else no puede fallar y, por lo tanto, el error desaparece. Tenga en cuenta que es imposible cubrir todos los valores de cadena posibles: Es por eso que los casos de cadena siempre necesitan una rama <tt class="docutils literal"><span class="pre">else</span></tt>.</p>
+<p>En general, la declaración de caso se usa para los tipos de subrango o enumeración donde el compilador comprueba que cubrió cualquier valor posible.</p>
+<p><strong>while declaración</strong></p>
+<p>La instrucción while es una construcción de bucle simple:</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="StringLit">&quot;What's your name? &quot;</span>
+<span class="Keyword">var</span> <span class="Identifier">name</span> <span class="Operator">=</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span>
+<span class="Keyword">while</span> <span class="Identifier">name</span> <span class="Operator">==</span> <span class="StringLit">&quot;&quot;</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;Please tell me your name: &quot;</span>
+  <span class="Identifier">name</span> <span class="Operator">=</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span>
+  <span class="Comment"># no ``var``, because we do not declare a new variable here</span></pre><p>El ejemplo utiliza un bucle while para seguir preguntando a los usuarios por su nombre, siempre y cuando el usuario no escriba nada (solo presione RETORNO).</p>
+<p><strong>for declaración</strong></p>
+<p>La instrucción <tt class="docutils literal"><span class="pre">for</span></tt> es una construcción para recorrer cualquier elemento que proporciona un iterador. El ejemplo utiliza el iterador incorporado de cuenta atrás:</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="StringLit">&quot;Counting to ten: &quot;</span>
+<span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="Identifier">countup</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">,</span> <span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">i</span>
+<span class="Comment"># --&gt; Outputs 1 2 3 4 5 6 7 8 9 10 on different lines</span></pre><p>La variable <tt class="docutils literal"><span class="pre">i</span></tt> es declarada implícitamente por el bucle <tt class="docutils literal"><span class="pre">for</span></tt> y tiene el tipo <tt class="docutils literal"><span class="pre">int</span></tt>, porque eso es lo que devuelve el conteo. <tt class="docutils literal"><span class="pre">i</span></tt> corre a través de los valores 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Cada valor es mostrado con <tt class="docutils literal"><span class="pre">echo</span></tt>. Este código hace lo mismo:</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="StringLit">&quot;Counting to 10: &quot;</span>
+<span class="Keyword">var</span> <span class="Identifier">i</span> <span class="Operator">=</span> <span class="DecNumber">1</span>
+<span class="Keyword">while</span> <span class="Identifier">i</span> <span class="Operator">&lt;=</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">i</span>
+  <span class="Identifier">inc</span> <span class="Identifier">i</span>  <span class="Comment"># increment i by 1</span>
+<span class="Comment"># --&gt; Outputs 1 2 3 4 5 6 7 8 9 10 on different lines</span></pre><p>La cuenta regresiva se puede lograr con la misma facilidad (pero es menos necesaria):</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="StringLit">&quot;Counting down from 10 to 1: &quot;</span>
+<span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="Identifier">countdown</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span> <span class="DecNumber">1</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">i</span>
+<span class="Comment"># --&gt; Outputs 10 9 8 7 6 5 4 3 2 1 on different lines</span></pre><p>Desde contando ocurre tan a menudo en los programas, Nim también tiene un <tt class="docutils literal"><span class="pre">..</span></tt> iterador que hace lo mismo:</p>
+<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">i</span></pre><p>El conteo de índice cero tiene dos accesos directos <tt class="docutils literal"><span class="pre">..&lt;</span></tt> y <tt class="docutils literal"><span class="pre">..^</span></tt> para simplificar el conteo a uno menos que el índice más alto:</p>
+<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">i</span>  <span class="Comment"># 0..9</span></pre><p>o</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">s</span> <span class="Operator">=</span> <span class="StringLit">&quot;some string&quot;</span>
+<span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="Identifier">s</span><span class="Operator">.</span><span class="Identifier">len</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">i</span></pre><p>Otros iteradores útiles para colecciones (como matrices y secuencias) son:</p>
+<ul class="simple"><li><tt class="docutils literal"><span class="pre">items</span></tt> y <tt class="docutils literal"><span class="pre">mitems</span></tt>, que proporciona elementos inmutables y mutables respectivamente.</li>
+<li><tt class="docutils literal"><span class="pre">pairs</span></tt> y <tt class="docutils literal"><span class="pre">mpairs</span></tt> que proporcionan el elemento y un número de índice (inmutable y mutable respectivamente)</li>
+</ul>
+<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">index</span><span class="Punctuation">,</span> <span class="Identifier">item</span> <span class="Keyword">in</span> <span class="Punctuation">[</span><span class="StringLit">&quot;a&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;b&quot;</span><span class="Punctuation">]</span><span class="Operator">.</span><span class="Identifier">pairs</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">item</span><span class="Punctuation">,</span> <span class="StringLit">&quot; at index &quot;</span><span class="Punctuation">,</span> <span class="Identifier">index</span>
+  <span class="Comment"># =&gt; a at index 0</span>
+  <span class="Comment"># =&gt; b at index 1</span></pre><p><strong>Los ámbitos y la declaración de block</strong></p>
+<p>Las declaraciones de flujo de control tienen una característica aún no cubierta: Abren un nuevo ámbito (contexto). Esto significa que en el siguiente ejemplo, <tt class="docutils literal"><span class="pre">x</span></tt> no es accesible fuera del bucle:</p>
+<pre class="listing"><span class="Keyword">while</span> <span class="Identifier">false</span><span class="Punctuation">:</span>
+  <span class="Keyword">var</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="StringLit">&quot;hi&quot;</span>
+<span class="Identifier">echo</span> <span class="Identifier">x</span>  <span class="Comment"># does not work</span></pre><p>Una sentencia while (para) introduce un bloque implícito. Los identificadores solo son visibles dentro del bloque que han sido declarados. La instrucción de <tt class="docutils literal"><span class="pre">block</span></tt> se puede usar para abrir un nuevo bloque explícitamente:</p>
+<pre class="listing"><span class="Keyword">block</span> <span class="Identifier">myblock</span><span class="Punctuation">:</span>
+  <span class="Keyword">var</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="StringLit">&quot;hi&quot;</span>
+<span class="Identifier">echo</span> <span class="Identifier">x</span> <span class="Comment"># does not work either</span></pre><p>La etiqueta del bloque (<tt class="docutils literal"><span class="pre">myblock</span></tt> en el ejemplo) es opcional.</p>
+<p><strong>break Declaración</strong></p>
+<p>Un bloque se puede dejar prematuramente con una instrucción break . La instrucción <tt class="docutils literal"><span class="pre">break</span></tt> puede dejar un <tt class="docutils literal"><span class="pre">while</span></tt> , `` for``, o una instrucción de <tt class="docutils literal"><span class="pre">block</span></tt> . Abandona la construcción más interna, a menos que se dé una etiqueta de un bloque:</p>
+<pre class="listing"><span class="Keyword">block</span> <span class="Identifier">myblock</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;entering block&quot;</span>
+  <span class="Keyword">while</span> <span class="Identifier">true</span><span class="Punctuation">:</span>
+    <span class="Identifier">echo</span> <span class="StringLit">&quot;looping&quot;</span>
+    <span class="Keyword">break</span> <span class="Comment"># leaves the loop, but not the block</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;still in block&quot;</span>
+
+<span class="Keyword">block</span> <span class="Identifier">myblock2</span><span class="Punctuation">:</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;entering block&quot;</span>
+<span class="Keyword">while</span> <span class="Identifier">true</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;looping&quot;</span>
+  <span class="Keyword">break</span> <span class="Identifier">myblock2</span> <span class="Comment"># leaves the block (and the loop)</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;still in block&quot;</span></pre><p><strong>continue declaración</strong></p>
+<p>Al igual que en muchos otros lenguajes de programación, una instrucción de <tt class="docutils literal"><span class="pre">continue</span></tt> comienza la siguiente iteración inmediatamente:</p>
+<pre class="listing"><span class="Keyword">while</span> <span class="Identifier">true</span><span class="Punctuation">:</span>
+  <span class="Keyword">let</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span>
+  <span class="Keyword">if</span> <span class="Identifier">x</span> <span class="Operator">==</span> <span class="StringLit">&quot;&quot;</span><span class="Punctuation">:</span> <span class="Keyword">continue</span>
+  <span class="Identifier">echo</span> <span class="Identifier">x</span></pre><p><strong>when declaración</strong></p>
+<p>Ejemplo:</p>
+<pre class="listing"><span class="Keyword">when</span> <span class="Identifier">hostOS</span> <span class="Operator">==</span> <span class="StringLit">&quot;windows&quot;</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;running on Windows!&quot;</span>
+<span class="Keyword">elif</span> <span class="Identifier">hostOS</span> <span class="Operator">==</span> <span class="StringLit">&quot;linux&quot;</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;running on Linux!&quot;</span>
+<span class="Keyword">elif</span> <span class="Identifier">hostOS</span> <span class="Operator">==</span> <span class="StringLit">&quot;macosx&quot;</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;running on Mac OS X!&quot;</span>
+<span class="Keyword">else</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;unknown operating system&quot;</span></pre><p>La instrucción <tt class="docutils literal"><span class="pre">when</span></tt> es casi idéntica a la instrucción <tt class="docutils literal"><span class="pre">if</span></tt>, pero con estas diferencias:</p>
+<ul class="simple"><li>Cada condición debe ser una expresión constante ya que es evaluada por el compilador.</li>
+<li>Las declaraciones dentro de una rama no abren un nuevo alcance.</li>
+<li>El compilador comprueba la semántica y produce código solo para las</li>
+</ul>
+<p>declaraciones que pertenecen a la primera condición que se evalúa como <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+<p>La instrucción <tt class="docutils literal"><span class="pre">when</span></tt> es útil para escribir código específico de plataforma, similar a la construcción <tt class="docutils literal"><span class="pre">#ifdef</span></tt> en el lenguaje de programación C.</p>
+
+<h2 id="declaraciones-y-sangría">Declaraciones y sangría</h2><p>Ahora que cubrimos las declaraciones de flujo de control básico, volvamos a las reglas de sangría de Nim.</p>
+<p>En Nim hay una distinción entre declaraciones simples y declaraciones complejas . Las declaraciones simples no pueden contener otras declaraciones: La asignación, las llamadas a procedimientos o la declaración de devolución pertenecen a las declaraciones simples.</p>
+<p>Las declaraciones complejas como <tt class="docutils literal"><span class="pre">if</span></tt>, <tt class="docutils literal"><span class="pre">when</span></tt> , <tt class="docutils literal"><span class="pre">for</span></tt> , <tt class="docutils literal"><span class="pre">while</span></tt> pueden contener otras declaraciones. Para evitar ambiguedades, las declaraciones complejas siempre deben estar sangradas, pero las declaraciones simples y simples no:</p>
+<pre class="listing"><span class="Comment"># no indentation needed for single assignment statement:</span>
+<span class="Keyword">if</span> <span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">false</span>
+
+<span class="Comment"># indentation needed for nested if statement:</span>
+<span class="Keyword">if</span> <span class="Identifier">x</span><span class="Punctuation">:</span>
+  <span class="Keyword">if</span> <span class="Identifier">y</span><span class="Punctuation">:</span>
+    <span class="Identifier">y</span> <span class="Operator">=</span> <span class="Identifier">false</span>
+<span class="Keyword">else</span><span class="Punctuation">:</span>
+  <span class="Identifier">y</span> <span class="Operator">=</span> <span class="Identifier">true</span>
+
+<span class="Comment"># indentation needed, because two statements follow the condition:</span>
+<span class="Keyword">if</span> <span class="Identifier">x</span><span class="Punctuation">:</span>
+  <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">false</span>
+  <span class="Identifier">y</span> <span class="Operator">=</span> <span class="Identifier">false</span></pre><p>Las expresiones son parte de una declaración que generalmente resulta en un valor. La condición en una sentencia if es un ejemplo para una expresión. Las expresiones pueden contener sangría en ciertos lugares para una mejor legibilidad:</p>
+<pre class="listing"><span class="Keyword">if</span> <span class="Identifier">thisIsaLongCondition</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">and</span>
+  <span class="Identifier">thisIsAnotherLongCondition</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">,</span>
+      <span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">true</span></pre><p>Como regla general, se permite la sangría dentro de las expresiones después de los operadores, un paréntesis abierto y después de las comas.</p>
+<p>Con paréntesis y punto y coma <tt class="docutils literal"><span class="pre">( ; )</span></tt> puede usar sentencias donde solo se permite una expresión:</p>
+<pre class="listing"><span class="Comment"># computes fac(4) at compile time:</span>
+<span class="Keyword">const</span> <span class="Identifier">fac4</span> <span class="Operator">=</span> <span class="Punctuation">(</span><span class="Keyword">var</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="DecNumber">1</span> <span class="Punctuation">;</span> <span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span><span class="DecNumber">4</span><span class="Punctuation">:</span> <span class="Identifier">x</span> <span class="Operator">*=</span> <span class="Identifier">i</span> <span class="Punctuation">;</span> <span class="Identifier">x</span><span class="Punctuation">)</span></pre>
+<h2 id="procedimientos">Procedimientos</h2><p>Para definir nuevos comandos como echo y readLine en los ejemplos, se necesita el concepto de un <tt class="docutils literal"><span class="pre">procedimiento</span></tt>. (Algunos idiomas los llaman métodos o funciones ). En Nim, los nuevos procedimientos se definen con la palabra clave <tt class="docutils literal"><span class="pre">proc</span></tt>:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">yes</span><span class="Punctuation">(</span><span class="Identifier">question</span><span class="Punctuation">:</span> <span class="Identifier">string</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bool</span> <span class="Operator">=</span>
+  <span class="Identifier">echo</span> <span class="Identifier">question</span><span class="Punctuation">,</span> <span class="StringLit">&quot; (y/n)&quot;</span>
+  <span class="Keyword">while</span> <span class="Identifier">true</span><span class="Punctuation">:</span>
+    <span class="Keyword">case</span> <span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">stdin</span><span class="Punctuation">)</span>
+    <span class="Keyword">of</span> <span class="StringLit">&quot;y&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;Y&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;yes&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;Yes&quot;</span><span class="Punctuation">:</span> <span class="Keyword">return</span> <span class="Identifier">true</span>
+    <span class="Keyword">of</span> <span class="StringLit">&quot;n&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;N&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;no&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;No&quot;</span><span class="Punctuation">:</span> <span class="Keyword">return</span> <span class="Identifier">false</span>
+    <span class="Keyword">else</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;Please be clear: yes or no&quot;</span>
+
+<span class="Keyword">if</span> <span class="Identifier">yes</span><span class="Punctuation">(</span><span class="StringLit">&quot;Should I delete all your important files?&quot;</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;I'm sorry Dave, I'm afraid I can't do that.&quot;</span>
+<span class="Keyword">else</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="StringLit">&quot;I think you know what the problem is just as well as I do.&quot;</span></pre><p>Este ejemplo muestra un procedimiento llamado sí que hace una pregunta al usuario y devuelve verdadero si contestó &quot;sí&quot; (o algo similar) y devuelve falso si respondió &quot;no&quot; (o algo similar). Una declaración de retorno abandona el procedimiento (y, por lo tanto, el bucle while) inmediatamente. La ( sintaxis : cadena): <tt class="docutils literal"><span class="pre">bool</span></tt> describe que el procedimiento espera un parámetro llamado pregunta de tipo <tt class="docutils literal"><span class="pre">cadena</span></tt> y devuelve un valor de tipo <tt class="docutils literal"><span class="pre">bool</span></tt> . El tipo bool está integrado: los únicos valores válidos para <tt class="docutils literal"><span class="pre">bool</span></tt> son <tt class="docutils literal"><span class="pre">true</span></tt> y <tt class="docutils literal"><span class="pre">false</span></tt>. Las condiciones en las sentencias if o while deben ser de tipo <tt class="docutils literal"><span class="pre">bool</span></tt>.</p>
+<p>Alguna terminología: En la pregunta de ejemplo se llama un parámetro (formal), &quot;Debería ...&quot; se llama un argumento que se pasa a este parámetro.</p>
+<p><strong>Variable de resultado</strong></p>
+<p>Un procedimiento que devuelve un valor tiene una variable de <tt class="docutils literal"><span class="pre">result</span></tt> implícita declarada que representa el valor de retorno. Una declaración de <tt class="docutils literal"><span class="pre">return</span></tt> sin expresión es una abreviatura para el <tt class="docutils literal"><span class="pre">return result</span></tt>. El valor del <tt class="docutils literal"><span class="pre">result</span></tt> siempre se devuelve automáticamente al final de un procedimiento si no hay una declaración de <tt class="docutils literal"><span class="pre">return</span></tt> en la salida.</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">sumTillNegative</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">varargs</span><span class="Punctuation">[</span><span class="Identifier">int</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Operator">=</span>
+  <span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="Identifier">x</span><span class="Punctuation">:</span>
+    <span class="Keyword">if</span> <span class="Identifier">i</span> <span class="Operator">&lt;</span> <span class="DecNumber">0</span><span class="Punctuation">:</span>
+      <span class="Keyword">return</span>
+    <span class="Identifier">result</span> <span class="Operator">=</span> <span class="Identifier">result</span> <span class="Operator">+</span> <span class="Identifier">i</span>
+
+<span class="Identifier">echo</span> <span class="Identifier">sumTillNegative</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Comment"># echos 0</span>
+<span class="Identifier">echo</span> <span class="Identifier">sumTillNegative</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">4</span><span class="Punctuation">,</span> <span class="DecNumber">5</span><span class="Punctuation">)</span> <span class="Comment"># echos 12</span>
+<span class="Identifier">echo</span> <span class="Identifier">sumTillNegative</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">4</span> <span class="Punctuation">,</span> <span class="Operator">-</span><span class="DecNumber">1</span> <span class="Punctuation">,</span> <span class="DecNumber">6</span><span class="Punctuation">)</span> <span class="Comment"># echos 7</span></pre><p>La variable de <tt class="docutils literal"><span class="pre">result</span></tt> ya está declarada implícitamente al inicio de la función, por lo que declararla de nuevo con <tt class="docutils literal"><span class="pre">var result</span></tt>, por ejemplo, la sombrearía con una variable normal del mismo nombre. La variable de resultado también ya está inicializada con el valor predeterminado del tipo. Tenga en cuenta que los tipos de datos referenciales serán <tt class="docutils literal"><span class="pre">nil</span></tt> al inicio del procedimiento y, por lo tanto, pueden requerir una inicialización manual.</p>
+<p><strong>Parámetros</strong></p>
+<p>Los parámetros son inmutables en el cuerpo del procedimiento. De forma predeterminada, su valor no se puede cambiar porque esto permite al compilador implementar el paso de parámetros de la manera más eficiente. Si se necesita una variable mutable dentro del procedimiento, debe declararse con <tt class="docutils literal"><span class="pre">var</span></tt> en el cuerpo del procedimiento. Es posible sombrear el nombre del parámetro, y en realidad un idioma:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">printSeq</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">,</span> <span class="Identifier">nprinted</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Operator">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Punctuation">)</span> <span class="Operator">=</span>
+  <span class="Keyword">var</span> <span class="Identifier">nprinted</span> <span class="Operator">=</span> <span class="Keyword">if</span> <span class="Identifier">nprinted</span> <span class="Operator">==</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Punctuation">:</span> <span class="Identifier">s</span><span class="Operator">.</span><span class="Identifier">len</span> <span class="Keyword">else</span><span class="Punctuation">:</span> <span class="Identifier">min</span><span class="Punctuation">(</span><span class="Identifier">nprinted</span><span class="Punctuation">,</span> <span class="Identifier">s</span><span class="Operator">.</span><span class="Identifier">len</span><span class="Punctuation">)</span>
+  <span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="DecNumber">0</span> <span class="Operator">..</span> <span class="Operator">&lt;</span><span class="Identifier">nprinted</span><span class="Punctuation">:</span>
+    <span class="Identifier">echo</span> <span class="Identifier">s</span><span class="Punctuation">[</span><span class="Identifier">i</span><span class="Punctuation">]</span></pre><p>Si el procedimiento necesita modificar el argumento para la persona que llama, se puede usar un parámetro <tt class="docutils literal"><span class="pre">var</span></tt>:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">divmod</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">,</span> <span class="Identifier">b</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">;</span> <span class="Identifier">res</span><span class="Punctuation">,</span> <span class="Identifier">remainder</span><span class="Punctuation">:</span> <span class="Keyword">var</span> <span class="Identifier">int</span><span class="Punctuation">)</span> <span class="Operator">=</span>
+  <span class="Identifier">res</span> <span class="Operator">=</span> <span class="Identifier">a</span> <span class="Keyword">div</span> <span class="Identifier">b</span>        <span class="Comment"># integer division</span>
+  <span class="Identifier">remainder</span> <span class="Operator">=</span> <span class="Identifier">a</span> <span class="Keyword">mod</span> <span class="Identifier">b</span>  <span class="Comment"># integer modulo operation</span>
+
+<span class="Keyword">var</span> <span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">:</span> <span class="Identifier">int</span>
+<span class="Identifier">divmod</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span> <span class="DecNumber">5</span><span class="Punctuation">,</span> <span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">)</span> <span class="Comment"># modifies x and y</span>
+<span class="Identifier">echo</span> <span class="Identifier">x</span>
+<span class="Identifier">echo</span> <span class="Identifier">y</span></pre><p>En el ejemplo, <tt class="docutils literal"><span class="pre">res</span></tt> y <tt class="docutils literal"><span class="pre">remainder</span></tt> son <tt class="docutils literal"><span class="pre">var parameters</span></tt>. Los parámetros de la var pueden ser modificados por el procedimiento y los cambios son visibles para la persona que llama. Tenga en cuenta que el ejemplo anterior sería mejor utilizar una tupla como valor de retorno en lugar de usar los parámetros var.</p>
+<p><strong>Declaración de descarte</strong></p>
+<p>Para llamar a un procedimiento que devuelve un valor solo por sus efectos secundarios e ignorando su valor de retorno, se debe usar una declaración de <tt class="docutils literal"><span class="pre">discard</span></tt>. Nim no permite tirar silenciosamente un valor de retorno:</p>
+<pre class="listing"><span class="Keyword">discard</span> <span class="Identifier">yes</span><span class="Punctuation">(</span><span class="StringLit">&quot;May I ask a pointless question?&quot;</span><span class="Punctuation">)</span></pre><p>El valor de retorno se puede ignorar implícitamente si el <tt class="docutils literal"><span class="pre">proc</span></tt> / <tt class="docutils literal"><span class="pre">iterator</span></tt> llamado se ha declarado con el pragma <tt class="docutils literal"><span class="pre">discardable</span></tt>:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">p</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Punctuation">{</span><span class="Operator">.</span><span class="Identifier">discardable</span><span class="Operator">.</span><span class="Punctuation">}</span> <span class="Operator">=</span>
+  <span class="Keyword">return</span> <span class="Identifier">x</span> <span class="Operator">+</span> <span class="Identifier">y</span>
+
+<span class="Identifier">p</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">4</span><span class="Punctuation">)</span> <span class="Comment"># now valid</span></pre><p><strong>Argumentos con nombre</strong></p>
+<p>A menudo, un procedimiento tiene muchos parámetros y no está claro en qué orden aparecen los parámetros. Esto es especialmente cierto para los procedimientos que construyen un tipo de datos complejo. Por lo tanto, los argumentos de un procedimiento se pueden nombrar, de modo que quede claro qué argumento pertenece a qué parámetro:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">createWindow</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">,</span> <span class="Identifier">width</span><span class="Punctuation">,</span> <span class="Identifier">height</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">;</span> <span class="Identifier">title</span><span class="Punctuation">:</span> <span class="Identifier">string</span><span class="Punctuation">;</span>
+                  <span class="Identifier">show</span><span class="Punctuation">:</span> <span class="Identifier">bool</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">Window</span> <span class="Operator">=</span>
+  <span class="Operator">...</span>
+
+<span class="Keyword">var</span> <span class="Identifier">w</span> <span class="Operator">=</span> <span class="Identifier">createWindow</span><span class="Punctuation">(</span><span class="Identifier">show</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">,</span> <span class="Identifier">title</span> <span class="Operator">=</span> <span class="StringLit">&quot;My Application&quot;</span><span class="Punctuation">,</span>
+                     <span class="Identifier">x</span> <span class="Operator">=</span> <span class="DecNumber">0</span><span class="Punctuation">,</span> <span class="Identifier">y</span> <span class="Operator">=</span> <span class="DecNumber">0</span><span class="Punctuation">,</span> <span class="Identifier">height</span> <span class="Operator">=</span> <span class="DecNumber">600</span><span class="Punctuation">,</span> <span class="Identifier">width</span> <span class="Operator">=</span> <span class="DecNumber">800</span><span class="Punctuation">)</span></pre><p>Ahora que usamos argumentos con nombre para llamar a <tt class="docutils literal"><span class="pre">createWindow</span></tt>, el orden de los argumentos ya no importa. También es posible mezclar argumentos nombrados con argumentos ordenados, pero no es muy legible:</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">w</span> <span class="Operator">=</span> <span class="Identifier">createWindow</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span> <span class="DecNumber">0</span><span class="Punctuation">,</span> <span class="Identifier">title</span> <span class="Operator">=</span> <span class="StringLit">&quot;My Application&quot;</span><span class="Punctuation">,</span>
+                     <span class="Identifier">height</span> <span class="Operator">=</span> <span class="DecNumber">600</span><span class="Punctuation">,</span> <span class="Identifier">width</span> <span class="Operator">=</span> <span class="DecNumber">800</span><span class="Punctuation">,</span> <span class="Identifier">true</span><span class="Punctuation">)</span></pre><p>El compilador comprueba que cada parámetro recibe exactamente un argumento.</p>
+<p><strong>Valores predeterminados</strong></p>
+<p>Para que el proceso <tt class="docutils literal"><span class="pre">createWindow</span></tt> sea ​​más fácil de usar, debe proporcionar <tt class="docutils literal"><span class="pre">default values</span></tt> ; Estos son valores que se utilizan como argumentos si el llamante no los especifica:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">createWindow</span><span class="Punctuation">(</span><span class="Identifier">x</span> <span class="Operator">=</span> <span class="DecNumber">0</span><span class="Punctuation">,</span> <span class="Identifier">y</span> <span class="Operator">=</span> <span class="DecNumber">0</span><span class="Punctuation">,</span> <span class="Identifier">width</span> <span class="Operator">=</span> <span class="DecNumber">500</span><span class="Punctuation">,</span> <span class="Identifier">height</span> <span class="Operator">=</span> <span class="DecNumber">700</span><span class="Punctuation">,</span>
+                  <span class="Identifier">title</span> <span class="Operator">=</span> <span class="StringLit">&quot;unknown&quot;</span><span class="Punctuation">,</span>
+                  <span class="Identifier">show</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">Window</span> <span class="Operator">=</span>
+  <span class="Operator">...</span>
+
+<span class="Keyword">var</span> <span class="Identifier">w</span> <span class="Operator">=</span> <span class="Identifier">createWindow</span><span class="Punctuation">(</span><span class="Identifier">title</span> <span class="Operator">=</span> <span class="StringLit">&quot;My Application&quot;</span><span class="Punctuation">,</span> <span class="Identifier">height</span> <span class="Operator">=</span> <span class="DecNumber">600</span><span class="Punctuation">,</span> <span class="Identifier">width</span> <span class="Operator">=</span> <span class="DecNumber">800</span><span class="Punctuation">)</span></pre><p>Ahora la llamada a <tt class="docutils literal"><span class="pre">createWindow</span></tt> solo necesita establecer los valores que difieren de los valores predeterminados.</p>
+<p>Tenga en cuenta que la inferencia de tipos funciona para parámetros con valores predeterminados; No hay necesidad de escribir <tt class="docutils literal"><span class="pre">title: string = &quot;unknown&quot;</span></tt>, por ejemplo.</p>
+<p><strong>Procedimientos sobrecargados</strong></p>
+<p>Nim proporciona la capacidad de sobrecargar procedimientos similares a C++</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">toString</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Punctuation">)</span><span class="Punctuation">:</span>  <span class="Identifier">string</span>  <span class="Operator">=</span>  <span class="Operator">...</span>
+<span class="Keyword">proc</span> <span class="Identifier">toString</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">bool</span> <span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">string</span>  <span class="Operator">=</span>
+  <span class="Keyword">if</span> <span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">result</span> <span class="Operator">=</span> <span class="StringLit">&quot;true&quot;</span>
+  <span class="Keyword">else</span><span class="Punctuation">:</span> <span class="Identifier">result</span> <span class="Operator">=</span> <span class="StringLit">&quot;false&quot;</span>
+
+<span class="Identifier">echo</span> <span class="Identifier">toString</span><span class="Punctuation">(</span><span class="DecNumber">13</span><span class="Punctuation">)</span>   <span class="Comment"># llama al toString (x: int) proc</span>
+<span class="Identifier">echo</span> <span class="Identifier">toString</span><span class="Punctuation">(</span><span class="Identifier">true</span><span class="Punctuation">)</span> <span class="Comment"># llama al proceso toString (x: bool) proc</span></pre><p>(Tenga en cuenta que <tt class="docutils literal"><span class="pre">toString</span></tt> suele ser el operador $ en Nim). El compilador elige el proceso más apropiado para las llamadas a <tt class="docutils literal"><span class="pre">toString</span></tt> . Aquí no se explica cómo funciona exactamente este algoritmo de resolución de sobrecarga (se especificará en el manual en breve). Sin embargo, no conduce a sorpresas desagradables y se basa en un algoritmo de unificación bastante simple. Las llamadas ambiguas se reportan como errores.</p>
+<p>Los operadores</p>
+<p>La biblioteca Nim hace un uso intensivo de la sobrecarga, una de las razones es que cada operador como + es solo un proceso sobrecargado. El analizador le permite usar operadores en <tt class="docutils literal"><span class="pre">infix notation (a + b)</span></tt> o <tt class="docutils literal"><span class="pre">prefix notation (+ a)</span></tt>. Un operador de infijo siempre recibe dos argumentos, un operador de prefijo siempre uno. (Los operadores de Postfix no son posibles, porque esto sería ambiguo: <tt class="docutils literal"><span class="pre">a @ @ b significa (a) @ (@b)</span></tt> o <tt class="docutils literal"><span class="pre">( a @ ) @ (b)</span></tt> ? Siempre significa <tt class="docutils literal"><span class="pre">(a) @ (@b)</span></tt> , porque no hay operadores de postfix en Nim.)</p>
+<p>Aparte de unos cuantos incorporado operadores de palabras clave tales como <tt class="docutils literal"><span class="pre">and</span></tt>, <tt class="docutils literal"><span class="pre">or</span></tt>, <tt class="docutils literal"><span class="pre">not</span></tt>, los operadores siempre constan de los siguientes caracteres: <tt class="docutils literal"><span class="pre">+ - * \ / &lt;&gt; = @ $ ~ &amp;%! ? ^. |</span></tt></p>
+<p>Se permiten operadores definidos por el usuario. Nada le impide definir su propio operador <tt class="docutils literal"><span class="pre">@!? + ~</span></tt>, Pero hacerlo puede reducir la legibilidad.</p>
+<p>La precedencia del operador está determinada por su primer carácter. Los detalles se pueden encontrar en el manual.</p>
+<p>Para definir un nuevo operador, encierre el operador en backticks:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Punctuation">`</span><span class="Operator">$</span><span class="Punctuation">`</span> <span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">myDataType</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">string</span> <span class="Operator">=</span> <span class="Operator">...</span>
+  <span class="Comment"># now the $ operator also works with myDataType, overloading resolution</span>
+  <span class="Comment"># ensures that $ works for built-in types just like before</span></pre><p>La notación backticks también se puede usar para llamar a un operador como cualquier otro procedimiento:</p>
+<pre class="listing"><span class="Keyword">if</span> <span class="Punctuation">`</span><span class="Operator">==</span><span class="Punctuation">`</span><span class="Punctuation">(</span> <span class="Punctuation">`</span><span class="Operator">+</span><span class="Punctuation">`</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">,</span> <span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;true&quot;</span></pre><p><strong>Forward Declarations</strong></p>
+<p>Cada variable, procedimiento, etc. debe ser declarado antes de que pueda ser utilizado. (La razón de esto es que no es trivial evitar esta necesidad en un lenguaje que</p>
+<dl class="docutils"><dt>admita la programación meta tan ampliamente como lo hace Nim).</dt>
+<dd>Sin embargo, esto no se puede hacer para procedimientos recursivos mutuos:</dd>
+</dl>
+<pre class="listing"><span class="Comment"># forward declaration:</span>
+<span class="Keyword">proc</span> <span class="Identifier">even</span><span class="Punctuation">(</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bool</span>
+<span class="Keyword">proc</span> <span class="Identifier">odd</span><span class="Punctuation">(</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bool</span></pre><pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">odd</span><span class="Punctuation">(</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bool</span> <span class="Operator">=</span>
+  <span class="Identifier">assert</span><span class="Punctuation">(</span><span class="Identifier">n</span> <span class="Operator">&gt;=</span> <span class="DecNumber">0</span><span class="Punctuation">)</span> <span class="Comment"># makes sure we don't run into negative recursion</span>
+  <span class="Keyword">if</span> <span class="Identifier">n</span> <span class="Operator">==</span> <span class="DecNumber">0</span><span class="Punctuation">:</span> <span class="Identifier">false</span>
+  <span class="Keyword">else</span><span class="Punctuation">:</span>
+    <span class="Identifier">n</span> <span class="Operator">==</span> <span class="DecNumber">1</span> <span class="Keyword">or</span> <span class="Identifier">even</span><span class="Punctuation">(</span><span class="Identifier">n</span><span class="Operator">-</span><span class="DecNumber">1</span><span class="Punctuation">)</span>
+
+<span class="Keyword">proc</span> <span class="Identifier">even</span><span class="Punctuation">(</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">bool</span> <span class="Operator">=</span>
+  <span class="Identifier">assert</span><span class="Punctuation">(</span><span class="Identifier">n</span> <span class="Operator">&gt;=</span> <span class="DecNumber">0</span><span class="Punctuation">)</span> <span class="Comment"># makes sure we don't run into negative recursion</span>
+  <span class="Keyword">if</span> <span class="Identifier">n</span> <span class="Operator">==</span> <span class="DecNumber">1</span><span class="Punctuation">:</span> <span class="Identifier">false</span>
+  <span class="Keyword">else</span><span class="Punctuation">:</span>
+    <span class="Identifier">n</span> <span class="Operator">==</span> <span class="DecNumber">0</span> <span class="Keyword">or</span> <span class="Identifier">odd</span><span class="Punctuation">(</span><span class="Identifier">n</span><span class="Operator">-</span><span class="DecNumber">1</span><span class="Punctuation">)</span></pre><p>Aquí lo <tt class="docutils literal"><span class="pre">odd</span></tt> depende de <tt class="docutils literal"><span class="pre">even</span></tt> y viceversa. Por lo tanto, <tt class="docutils literal"><span class="pre">even</span></tt> es necesario introducirlo en el compilador antes de que esté completamente definido. La sintaxis para tal declaración de reenvío es simple: Simplemente omita el <tt class="docutils literal"><span class="pre">=</span></tt> y el cuerpo del procedimiento. El <tt class="docutils literal"><span class="pre">assert</span></tt> solo agrega condiciones de borde y se cubrirá más adelante en la sección Módulos .</p>
+<p>Las versiones posteriores del lenguaje debilitarán los requisitos para las declaraciones a plazo.</p>
+<p>El ejemplo también muestra que el cuerpo de un proceso puede consistir en una sola expresión cuyo valor se devuelve implícitamente.</p>
+
+<h2 id="iteradores">Iteradores</h2><p>Volvamos al ejemplo de conteo simple:</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="StringLit">&quot;Counting to ten: &quot;</span>
+<span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="Identifier">countup</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">,</span> <span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">i</span></pre><p>Se puede escribir un proceso de conteo que admita este bucle? Intentemos:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">countup</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">,</span> <span class="Identifier">b</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Operator">=</span>
+  <span class="Keyword">var</span> <span class="Identifier">res</span> <span class="Operator">=</span> <span class="Identifier">a</span>
+  <span class="Keyword">while</span> <span class="Identifier">res</span> <span class="Operator">&lt;=</span> <span class="Identifier">b</span><span class="Punctuation">:</span>
+    <span class="Keyword">return</span> <span class="Identifier">res</span>
+    <span class="Identifier">inc</span> <span class="Identifier">res</span></pre><p>Sin embargo, esto no funciona. El problema es que el procedimiento no solo debe regresar, sino que debe regresar y continuar después de que una iteración haya finalizado. Este retorno y continuar se llama una declaración de rendimiento. Ahora lo único que queda por hacer es reemplazar la palabra clave proc por iterador y aquí está:</p>
+<p>Nuestro primer iterador:</p>
+<pre class="listing"><span class="Keyword">iterator</span> <span class="Identifier">countup</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">,</span> <span class="Identifier">b</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Operator">=</span>
+  <span class="Keyword">var</span> <span class="Identifier">res</span> <span class="Operator">=</span> <span class="Identifier">a</span>
+  <span class="Keyword">while</span> <span class="Identifier">res</span> <span class="Operator">&lt;=</span> <span class="Identifier">b</span><span class="Punctuation">:</span>
+    <span class="Keyword">yield</span> <span class="Identifier">res</span>
+    <span class="Identifier">inc</span> <span class="Identifier">res</span></pre><p>Los iteradores son muy similares a los procedimientos, pero hay varias diferencias importantes:</p>
+<ul class="simple"><li>Los iteradores solo pueden ser llamados desde los bucles.</li>
+<li>Los iteradores no pueden contener una declaración de <tt class="docutils literal"><span class="pre">return</span></tt> (y procs no pueden contener una declaración de <tt class="docutils literal"><span class="pre">yield</span></tt> ).</li>
+<li>Los iteradores no tienen una variable de <tt class="docutils literal"><span class="pre">result</span></tt> implícita .</li>
+<li>Los iteradores no son compatibles con la recursión.</li>
+<li>Los iteradores no se pueden declarar hacia delante, porque el compilador debe poder alinear un iterador.</li>
+</ul>
+<p>(Esta restricción desaparecerá en una versión futura del compilador).</p>
+<p>Sin embargo, también puede usar un iterador de <tt class="docutils literal"><span class="pre">closure</span></tt> para obtener un conjunto diferente de restricciones. Ver iteradores de primera clase para más detalles. Los iteradores pueden tener el mismo nombre y parámetros que un proc, ya que esencialmente tienen sus propios espacios de nombres. Por lo tanto, es una práctica común ajustar los iteradores en procesos del mismo nombre que acumulan el resultado del iterador y lo devuelven como una secuencia, como <tt class="docutils literal"><span class="pre">split</span></tt> del módulo strutils .</p>
+
+<h2 id="tipos-basicos">Tipos basicos</h2><p>Esta sección trata los tipos básicos integrados y las operaciones que están disponibles para ellos en detalle.</p>
+
+<h2 id="bool">Bool</h2><p>El tipo booleano de Nim se llama <tt class="docutils literal"><span class="pre">bool</span></tt> y consiste en los dos valores predefinidos <tt class="docutils literal"><span class="pre">true</span></tt> y <tt class="docutils literal"><span class="pre">false</span></tt> . Las condiciones en <tt class="docutils literal"><span class="pre">while</span></tt>, <tt class="docutils literal"><span class="pre">if</span></tt>, <tt class="docutils literal"><span class="pre">elif</span></tt> y <tt class="docutils literal"><span class="pre">when</span></tt> deben ser de tipo <tt class="docutils literal"><span class="pre">bool</span></tt>.</p>
+<p>Los operadores <tt class="docutils literal"><span class="pre">not, and, or, xor, &lt;, &lt;=,&gt;,&gt; =,! =, ==</span></tt> están definidos para el tipo <tt class="docutils literal"><span class="pre">bool</span></tt>. El <tt class="docutils literal"><span class="pre">and</span></tt> y <tt class="docutils literal"><span class="pre">or</span></tt> los operadores de realizar la evaluación de cortocircuito. Por ejemplo:</p>
+<pre class="listing"><span class="Keyword">while</span> <span class="Identifier">p</span> <span class="Operator">!=</span> <span class="Keyword">nil</span> <span class="Keyword">and</span> <span class="Identifier">p</span><span class="Operator">.</span><span class="Identifier">name</span> <span class="Operator">!=</span> <span class="StringLit">&quot;xyz&quot;</span><span class="Punctuation">:</span>
+  <span class="Comment"># p.name is not evaluated if p == nil</span>
+  <span class="Identifier">p</span> <span class="Operator">=</span> <span class="Identifier">p</span><span class="Operator">.</span><span class="Identifier">next</span></pre>
+<h2 id="char">Char</h2><p>El tipo caracter es llamado <tt class="docutils literal"><span class="pre">char</span></tt>. Su tamanio es siempre 1 byte, no puede representar caracteres UTF-8; Pero puede representar uno de los bytes que conforman un caracter multi-byte UTF-8. La razon es eficiencia: Para la mayoria de casos de uso mas comunes, los programas resultantes manejan UTF-8 adecuadamente por que UTF-8 fue especificamente disaniado para esto. El literal de un <tt class="docutils literal"><span class="pre">char</span></tt> es encerrado en comilla simple comun.</p>
+<p>Los caracteres pueden sen comparados con <tt class="docutils literal"><span class="pre">==</span></tt>, <tt class="docutils literal"><span class="pre">&lt;</span></tt>, <tt class="docutils literal"><span class="pre">&lt;=</span></tt>, <tt class="docutils literal"><span class="pre">&gt;</span></tt>, <tt class="docutils literal"><span class="pre">&gt;=</span></tt>. El operador <tt class="docutils literal"><span class="pre">$</span></tt> convertira un <tt class="docutils literal"><span class="pre">char</span></tt> a <tt class="docutils literal"><span class="pre">string</span></tt>. Caracteres  no se pueden mezclar con enteros; Para obtener el valor ordinal de un <tt class="docutils literal"><span class="pre">char</span></tt> usar el proc <tt class="docutils literal"><span class="pre">ord</span></tt>. Convertir desde entero a <tt class="docutils literal"><span class="pre">char</span></tt> se hace con el proc <tt class="docutils literal"><span class="pre">chr</span></tt>.</p>
+
+<h2 id="string">String</h2><p>Las variables de cadena son <strong>mutables</strong>, por lo que es posible agregarlas a una cadena, y es bastante eficiente. Las cadenas en Nim son Cero-terminadas (null terminator) y tienen un campo de longitud la longitud de una cadena se puede recuperar con el proc <tt class="docutils literal"><span class="pre">len</span></tt> incorporado; la longitud nunca cuenta el cero final (terminator). Acceder a la terminación cero es un error, solo existe para que una cadena Nim pueda convertirse a un <tt class="docutils literal"><span class="pre">cstring</span></tt> sin hacer una copia.</p>
+<p>El operador de asignación para cadenas copia la cadena. Puedes usar el <tt class="docutils literal"><span class="pre">&amp;</span></tt> operador para concatenar cadenas y <tt class="docutils literal"><span class="pre">add</span></tt> para agregar a una cadena.</p>
+<p>Las cadenas se comparan utilizando su orden lexicográfico. Todos los operadores de comparación son compatibles. Por convención, todas las cadenas están codificadas en UTF-8. Por ejemplo, al leer cadenas de archivos binarios, son simplemente una secuencia de bytes. La operación de índice <tt class="docutils literal"><span class="pre">s[i]</span></tt> significa el i-th <tt class="docutils literal"><span class="pre">char</span></tt> de <tt class="docutils literal"><span class="pre">s</span></tt>, no el i-th <tt class="docutils literal"><span class="pre">unichar</span></tt>.</p>
+<p>Una variable de cadena se inicializa con la cadena vacía <tt class="docutils literal"><span class="pre">&quot;&quot;</span></tt>.</p>
+
+<h2 id="integers">Integers</h2><p>Nim tiene estos tipos de enteros incorporados: <tt class="docutils literal"><span class="pre">int int8 int16 int32 int64 uint uint8 uint16 uint32 uint64</span></tt>.</p>
+<p>El tipo de entero predeterminado es <tt class="docutils literal"><span class="pre">int</span></tt>. Los literales enteros pueden tener un <em>sufijo de tipo</em> para especificar un tipo de entero no predeterminado:</p>
+<pre class="listing"><span class="Keyword">let</span>
+  <span class="Identifier">x</span> <span class="Operator">=</span> <span class="DecNumber">0</span>     <span class="Comment"># x is of type ``int``</span>
+  <span class="Identifier">y</span> <span class="Operator">=</span> <span class="DecNumber">0'i8</span>  <span class="Comment"># y is of type ``int8``</span>
+  <span class="Identifier">z</span> <span class="Operator">=</span> <span class="DecNumber">0'i64</span> <span class="Comment"># z is of type ``int64``</span>
+  <span class="Identifier">u</span> <span class="Operator">=</span> <span class="DecNumber">0'</span><span class="Identifier">u</span>   <span class="Comment"># u is of type ``uint``</span></pre><p>La mayoría de los enteros se utilizan para contar objetos que residen en la memoria, por lo que <tt class="docutils literal"><span class="pre">int</span></tt> tiene el mismo tamaño que un puntero.</p>
+<p>Los operadores comunes <tt class="docutils literal"><span class="pre">+ - * div mod &lt;&lt;= ==! =&gt;&gt; =</span></tt> se definen para enteros Los operadores <tt class="docutils literal"><span class="pre">and / or xor not</span></tt> también se definen para enteros, y proporcionan operaciones <em>bitwise</em>. El desplazamiento de bits a la izquierda se realiza con el <tt class="docutils literal"><span class="pre">shl</span></tt>, a la derecha cambiando con el operador <tt class="docutils literal"><span class="pre">shr</span></tt>. Los operadores de cambio de bits siempre tratan sus argumentos como <em>sin firmar</em> (Unsigned).</p>
+<p>Las operaciones Unsigned son todas del tipo wrap around; No pueden resultar en errores de overflow o underflow.</p>
+
+<h2 id="floats">Floats</h2><p>Nim tiene estos tipos de punto flotante incorporados: <tt class="docutils literal"><span class="pre">float float32 float64</span></tt>.</p>
+<p>El tipo float predeterminado es <tt class="docutils literal"><span class="pre">float</span></tt>. En la implementación actual, <tt class="docutils literal"><span class="pre">float</span></tt> es siempre de 64 Bits.</p>
+<p>Los literales flotantes pueden tener un <em>sufijo de tipo</em> para especificar un tipo de float no predeterminado:</p>
+<pre class="listing"><span class="Keyword">var</span>
+  <span class="Identifier">x</span> <span class="Operator">=</span> <span class="FloatNumber">0.0</span>      <span class="Comment"># x is of type ``float``</span>
+  <span class="Identifier">y</span> <span class="Operator">=</span> <span class="FloatNumber">0.0'f32</span>  <span class="Comment"># y is of type ``float32``</span>
+  <span class="Identifier">z</span> <span class="Operator">=</span> <span class="FloatNumber">0.0'f64</span>  <span class="Comment"># z is of type ``float64``</span></pre><p>Los operadores comunes <tt class="docutils literal"><span class="pre">+ - * / &lt; &lt;= == != &gt; &gt;=</span></tt> estan definidos para float y siguen los Standards de IEEE-754.</p>
+<p>La conversión automática de tipos en expresiones con diferentes tipos de flotación: El tipo más pequeño se convierte en el tipo más grande.</p>
+<p>Los tipos Enteros <strong>no</strong> se convierten a tipos de punto flotante automáticamente, ni viceversa.</p>
+
+<h2 id="type-conversion">Type Conversion</h2><p>La conversión entre tipos numéricos se realiza utilizando el tipo como una función:</p>
+<pre class="listing"><span class="Keyword">var</span>
+  <span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">int32</span> <span class="Operator">=</span> <span class="FloatNumber">1.</span><span class="Identifier">int32</span>     <span class="Comment"># same as calling int32(1)</span>
+  <span class="Identifier">y</span><span class="Punctuation">:</span> <span class="Identifier">int8</span>  <span class="Operator">=</span> <span class="Identifier">int8</span><span class="Punctuation">(</span><span class="CharLit">'a'</span><span class="Punctuation">)</span>   <span class="Comment"># 'a' == 97'i8</span>
+  <span class="Identifier">z</span><span class="Punctuation">:</span> <span class="Identifier">float</span> <span class="Operator">=</span> <span class="FloatNumber">2.5</span>         <span class="Comment"># int(2.5) rounds down to 2</span></pre>
+<h2 id="enumerations">Enumerations</h2><p>A una variable de un tipo de enumeración solo se le puede asignar uno de los valores especificados de la enumeración. Estos valores son un conjunto de símbolos ordenados. Cada símbolo es mapeado a un valor entero internamente. El primer símbolo está representado en tiempo de ejecución por 0, el segundo por 1 y así sucesivamente. Por ejemplo:</p>
+<pre class="listing"><span class="Keyword">type</span> <span class="Identifier">Direction</span> <span class="Operator">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">north</span><span class="Punctuation">,</span> <span class="Identifier">east</span><span class="Punctuation">,</span> <span class="Identifier">south</span><span class="Punctuation">,</span> <span class="Identifier">west</span>
+
+<span class="Keyword">var</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">south</span>     <span class="Comment"># `x` is of type `Direction`; its value is `south`</span>
+<span class="Identifier">echo</span> <span class="Identifier">x</span>            <span class="Comment"># writes &quot;south&quot;</span></pre><p>Todos los operadores de comparación se pueden utilizar con tipos de enumeración.</p>
+<p>El símbolo de una enumeración se puede calificar para evitar ambigüedades: <tt class="docutils literal"><span class="pre">Direction.south</span></tt>.</p>
+<p>El operador <tt class="docutils literal"><span class="pre">$</span></tt> puede convertir cualquier valor de enumeración a su nombre, y el <tt class="docutils literal"><span class="pre">ord</span></tt> puede convertirlo a su valor entero subyacente.</p>
+<p>Para interactuar mejor con otros lenguajes de programación, a los símbolos de enumeración se les puede asignar un valor ordinal explícito. Sin embargo, los valores ordinales debe estar en orden ascendente.</p>
+
+<h2 id="ordinal-types">Ordinal types</h2><p>Enumeraciones, enteros, <tt class="docutils literal"><span class="pre">char</span></tt> y <tt class="docutils literal"><span class="pre">bool</span></tt> (y subranges) se llaman tipos ordinales. Los tipos ordinales tienen algunas operaciones especiales:</p>
+<table border="1" class="docutils"><tr><th>Operacion</th><th>Comentario</th></tr>
+<tr><td><tt class="docutils literal"><span class="pre">ord(x)</span></tt></td><td>Retorna el valor entero usado para representar <tt class="docutils literal"><span class="pre">x</span></tt></td></tr>
+<tr><td><tt class="docutils literal"><span class="pre">inc(x)</span></tt></td><td>Incrementa <tt class="docutils literal"><span class="pre">x</span></tt> por 1</td></tr>
+<tr><td><tt class="docutils literal"><span class="pre">inc(x, n)</span></tt></td><td>Incrementa <tt class="docutils literal"><span class="pre">x</span></tt> por <tt class="docutils literal"><span class="pre">n</span></tt>; <tt class="docutils literal"><span class="pre">n</span></tt> es un entero</td></tr>
+<tr><td><tt class="docutils literal"><span class="pre">dec(x)</span></tt></td><td>Decrementa <tt class="docutils literal"><span class="pre">x</span></tt> por 1</td></tr>
+<tr><td><tt class="docutils literal"><span class="pre">dec(x, n)</span></tt></td><td>Decrementa <tt class="docutils literal"><span class="pre">x</span></tt> por <tt class="docutils literal"><span class="pre">n</span></tt>; <tt class="docutils literal"><span class="pre">n</span></tt> es un entero</td></tr>
+<tr><td><tt class="docutils literal"><span class="pre">succ(x)</span></tt></td><td>Retorna el sucesor de <tt class="docutils literal"><span class="pre">x</span></tt></td></tr>
+<tr><td><tt class="docutils literal"><span class="pre">succ(x, n)</span></tt></td><td>Retorna el <tt class="docutils literal"><span class="pre">n</span></tt> sucesor de <tt class="docutils literal"><span class="pre">x</span></tt></td></tr>
+<tr><td><tt class="docutils literal"><span class="pre">pred(x)</span></tt></td><td>Retorna el predecesor de <tt class="docutils literal"><span class="pre">x</span></tt></td></tr>
+<tr><td><tt class="docutils literal"><span class="pre">pred(x, n)</span></tt></td><td>Retorna el <tt class="docutils literal"><span class="pre">n</span></tt> predecesor de <tt class="docutils literal"><span class="pre">x</span></tt></td></tr>
+</table>
+<h2 id="subranges">Subranges</h2><p>Un tipo de subrango es un rango de valores de un entero o tipo de enumeración (el tipo base). Ejemplo:</p>
+<pre class="listing"><span class="Keyword">type</span> <span class="Identifier">MySubrange</span> <span class="Operator">=</span> <span class="Identifier">range</span><span class="Punctuation">[</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">]</span></pre><p><tt class="docutils literal"><span class="pre">MySubrange</span></tt> es un Subrango de <tt class="docutils literal"><span class="pre">int</span></tt> que solo puede contener los valores desde <tt class="docutils literal"><span class="pre">0</span></tt> a <tt class="docutils literal"><span class="pre">5</span></tt>. Asignar cualquier otro valor a una variable de tipo <tt class="docutils literal"><span class="pre">MySubrange</span></tt> es un Error en tiempo de compilación o en tiempo de ejecución.</p>
+
+<h2 id="arrays">Arrays</h2><p>Un Array es un contenedor de longitud fija simple. Cada elemento en un Array tiene el mismo tipo. El tipo de índice de la matriz puede ser cualquier tipo ordinal.</p>
+<p>Los Array se pueden construir usando <tt class="docutils literal"><span class="pre">[]</span></tt>:</p>
+<pre class="listing"><span class="Keyword">type</span> <span class="Identifier">IntArray</span> <span class="Operator">=</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span> <span class="Identifier">int</span><span class="Punctuation">]</span>   <span class="Comment"># Array indexed con 0..5</span>
+
+<span class="Keyword">var</span> <span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">IntArray</span>
+<span class="Identifier">x</span> <span class="Operator">=</span> <span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span> <span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">4</span><span class="Punctuation">,</span> <span class="DecNumber">5</span><span class="Punctuation">,</span> <span class="DecNumber">6</span><span class="Punctuation">]</span>
+
+<span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="Identifier">low</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Operator">..</span><span class="Identifier">high</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Punctuation">[</span><span class="Identifier">i</span><span class="Punctuation">]</span></pre><p>La notación <tt class="docutils literal"><span class="pre">x [i]</span></tt> se usa para acceder al elemento i-th de <tt class="docutils literal"><span class="pre">x</span></tt>. El acceso al Array siempre se comprueba con límites (en tiempo de compilación o en tiempo de ejecución). Estos chequeos pueden ser deshabilitados a través de pragmas o invocando el compilador con <tt class="docutils literal"><span class="pre">--boundChecks:off</span></tt> en la línea de comando.</p>
+<p>El operador de asignacion copia todo el contenido del Array.</p>
+
+<h2 id="sequences">Sequences</h2><p>Las secuencias son similares al Array pero de longitud dinámica, que pueden cambiar durante el tiempo de ejecución (como las cadenas).</p>
+<p>Las secuencias siempre se indexan con un <tt class="docutils literal"><span class="pre">int</span></tt> que comienza en la posición <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
+<p>Las secuencias pueden ser construidas por el constructor de Array <tt class="docutils literal"><span class="pre">[]</span></tt> en conjunción con el operador <tt class="docutils literal"><span class="pre">@</span></tt>, es decir <tt class="docutils literal"><span class="pre">@[]</span></tt>.</p>
+<p>Ejemplo:</p>
+<pre class="listing"><span class="Keyword">var</span>
+  <span class="Identifier">x</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">int</span><span class="Punctuation">]</span>
+  <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span> <span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="DecNumber">4</span><span class="Punctuation">,</span> <span class="DecNumber">5</span><span class="Punctuation">,</span> <span class="DecNumber">6</span><span class="Punctuation">]</span> <span class="Comment"># @ turns the array into a sequence allocated on the heap</span></pre><p>Las variables de secuencia se inicializan con <tt class="docutils literal"><span class="pre">@[]</span></tt></p>
+
+<h2 id="open-arrays">Open arrays</h2><p><strong>Nota</strong>: Openarrays solo se puede utilizar para parámetros.</p>
+<p>A menudo, los arreglos de tamaño fijo resultan ser demasiado inflexibles; Los procedimientos deben ser capaz de manejar Array de diferentes tamaños. El <tt class="docutils literal"><span class="pre">openarray</span></tt> permite esto. Los Openarrays siempre se indexan con un <tt class="docutils literal"><span class="pre">int</span></tt> que comienza en la posición 0. Cualquier Array con un tipo de base compatible se puede pasar a un parámetro openarray.</p>
+<pre class="listing"><span class="Keyword">var</span>
+  <span class="Identifier">fruits</span><span class="Punctuation">:</span>   <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">string</span><span class="Punctuation">]</span>       <span class="Comment"># reference to a sequence of strings that is initialized with '@[]'</span>
+  <span class="Identifier">capitals</span><span class="Punctuation">:</span> <span class="Identifier">array</span><span class="Punctuation">[</span><span class="DecNumber">3</span><span class="Punctuation">,</span> <span class="Identifier">string</span><span class="Punctuation">]</span>  <span class="Comment"># array of strings with a fixed size</span>
+
+<span class="Identifier">capitals</span> <span class="Operator">=</span> <span class="Punctuation">[</span><span class="StringLit">&quot;New York&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;London&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;Berlin&quot;</span><span class="Punctuation">]</span>   <span class="Comment"># array 'capitals' allows assignment of only three elements</span>
+<span class="Identifier">fruits</span><span class="Operator">.</span><span class="Identifier">add</span><span class="Punctuation">(</span><span class="StringLit">&quot;Banana&quot;</span><span class="Punctuation">)</span>          <span class="Comment"># sequence 'fruits' is dynamically expandable during runtime</span>
+<span class="Identifier">fruits</span><span class="Operator">.</span><span class="Identifier">add</span><span class="Punctuation">(</span><span class="StringLit">&quot;Mango&quot;</span><span class="Punctuation">)</span>
+
+<span class="Keyword">proc</span> <span class="Identifier">openArraySize</span><span class="Punctuation">(</span><span class="Identifier">oa</span><span class="Punctuation">:</span> <span class="Identifier">openArray</span><span class="Punctuation">[</span><span class="Identifier">string</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">int</span> <span class="Operator">=</span>
+  <span class="Identifier">oa</span><span class="Operator">.</span><span class="Identifier">len</span>
+
+<span class="Identifier">assert</span> <span class="Identifier">openArraySize</span><span class="Punctuation">(</span><span class="Identifier">fruits</span><span class="Punctuation">)</span> <span class="Operator">==</span> <span class="DecNumber">2</span>     <span class="Comment"># procedure accepts a sequence as parameter</span>
+<span class="Identifier">assert</span> <span class="Identifier">openArraySize</span><span class="Punctuation">(</span><span class="Identifier">capitals</span><span class="Punctuation">)</span> <span class="Operator">==</span> <span class="DecNumber">3</span>   <span class="Comment"># but also an array type</span></pre><p>El tipo openarray no puede ser anidado: Los openarrays multidimensionales no son soportados porque esto rara vez es necesario y no se puede hacer de manera eficiente.</p>
+
+<h2 id="varargs">Varargs</h2><p>Un parámetro <tt class="docutils literal"><span class="pre">varargs</span></tt> es como un parámetro openarray. Sin embargo es también un medio para pasar un número variable de argumentos a un procedimiento. El compilador convierte la lista de argumentos a un Array automáticamente:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">myWriteln</span><span class="Punctuation">(</span><span class="Identifier">f</span><span class="Punctuation">:</span> <span class="Identifier">File</span><span class="Punctuation">,</span> <span class="Identifier">a</span><span class="Punctuation">:</span> <span class="Identifier">varargs</span><span class="Punctuation">[</span><span class="Identifier">string</span><span class="Punctuation">]</span><span class="Punctuation">)</span> <span class="Operator">=</span>
+  <span class="Keyword">for</span> <span class="Identifier">s</span> <span class="Keyword">in</span> <span class="Identifier">items</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+    <span class="Identifier">write</span><span class="Punctuation">(</span><span class="Identifier">f</span><span class="Punctuation">,</span> <span class="Identifier">s</span><span class="Punctuation">)</span>
+  <span class="Identifier">write</span><span class="Punctuation">(</span><span class="Identifier">f</span><span class="Punctuation">,</span> <span class="StringLit">&quot;</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">)</span>
+
+<span class="Identifier">myWriteln</span><span class="Punctuation">(</span><span class="Identifier">stdout</span><span class="Punctuation">,</span> <span class="StringLit">&quot;abc&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;def&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;xyz&quot;</span><span class="Punctuation">)</span>
+<span class="Comment"># is transformed by the compiler to:</span>
+<span class="Identifier">myWriteln</span><span class="Punctuation">(</span><span class="Identifier">stdout</span><span class="Punctuation">,</span> <span class="Punctuation">[</span><span class="StringLit">&quot;abc&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;def&quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;xyz&quot;</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre><p>Esta transformación solo se realiza si el parámetro varargs es el ultimo parámetro en el encabezado del procedimiento. También es posible realizar conversiones de tipo en este contexto:</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">myWriteln</span><span class="Punctuation">(</span><span class="Identifier">f</span><span class="Punctuation">:</span> <span class="Identifier">File</span><span class="Punctuation">,</span> <span class="Identifier">a</span><span class="Punctuation">:</span> <span class="Identifier">varargs</span><span class="Punctuation">[</span><span class="Identifier">string</span><span class="Punctuation">,</span> <span class="Punctuation">`</span><span class="Operator">$</span><span class="Punctuation">`</span><span class="Punctuation">]</span><span class="Punctuation">)</span> <span class="Operator">=</span>
+  <span class="Keyword">for</span> <span class="Identifier">s</span> <span class="Keyword">in</span> <span class="Identifier">items</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+    <span class="Identifier">write</span><span class="Punctuation">(</span><span class="Identifier">f</span><span class="Punctuation">,</span> <span class="Identifier">s</span><span class="Punctuation">)</span>
+  <span class="Identifier">write</span><span class="Punctuation">(</span><span class="Identifier">f</span><span class="Punctuation">,</span> <span class="StringLit">&quot;</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">)</span>
+
+<span class="Identifier">myWriteln</span><span class="Punctuation">(</span><span class="Identifier">stdout</span><span class="Punctuation">,</span> <span class="DecNumber">123</span><span class="Punctuation">,</span> <span class="StringLit">&quot;abc&quot;</span><span class="Punctuation">,</span> <span class="FloatNumber">4.0</span><span class="Punctuation">)</span>
+<span class="Comment"># is transformed by the compiler to:</span>
+<span class="Identifier">myWriteln</span><span class="Punctuation">(</span><span class="Identifier">stdout</span><span class="Punctuation">,</span> <span class="Punctuation">[</span><span class="Operator">$</span><span class="DecNumber">123</span><span class="Punctuation">,</span> <span class="Operator">$</span><span class="StringLit">&quot;abc&quot;</span><span class="Punctuation">,</span> <span class="Operator">$</span><span class="FloatNumber">4.0</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre><p>En este ejemplo <tt class="docutils literal"><span class="pre">$</span></tt> se aplica a cualquier argumento que se pase al parámetro <tt class="docutils literal"><span class="pre">a</span></tt>.</p>
+
+<h2 id="slices">Slices</h2><p>Los segmentos se parecen a los tipos de subranges en la sintaxis, pero se utilizan en una diferente contexto. Una división es solo un objeto de tipo División que contiene dos límites, <tt class="docutils literal"><span class="pre">a</span></tt> y <tt class="docutils literal"><span class="pre">b</span></tt>. Por sí mismo, un Slice no es muy útil, pero otros tipos de colección definen operadores que aceptan Slice para definir rangos.</p>
+<pre class="listing"><span class="Keyword">var</span>
+  <span class="Identifier">a</span> <span class="Operator">=</span> <span class="StringLit">&quot;Nim is a progamming language&quot;</span>
+  <span class="Identifier">b</span> <span class="Operator">=</span> <span class="StringLit">&quot;Slices are useless.&quot;</span>
+
+<span class="Identifier">echo</span> <span class="Identifier">a</span><span class="Punctuation">[</span><span class="FloatNumber">7.</span><span class="Operator">.</span><span class="DecNumber">12</span><span class="Punctuation">]</span> <span class="Comment"># --&gt; 'a prog'</span>
+<span class="Identifier">b</span><span class="Punctuation">[</span><span class="FloatNumber">11.</span><span class="Operator">.^</span><span class="DecNumber">2</span><span class="Punctuation">]</span> <span class="Operator">=</span> <span class="StringLit">&quot;useful&quot;</span>
+<span class="Identifier">echo</span> <span class="Identifier">b</span> <span class="Comment"># --&gt; 'Slices are useful.'</span></pre>
+<h2 id="objects">Objects</h2><p>El tipo predeterminado para empaquetar diferentes valores juntos en una sola estructura con un nombre es el tipo Objeto. Un objeto es un Value Type, lo que significa que cuando un objeto se asigna a una nueva variable todo sus componentes también se copian.</p>
+<p>Cada tipo de objeto <tt class="docutils literal"><span class="pre">Foo</span></tt> tiene un constructor <tt class="docutils literal"><span class="pre">Foo(campo: valor)</span></tt>, donde todos sus campos pueden ser inicializados. Los campos no especificados obtienen su valor por defecto.</p>
+<pre class="listing"><span class="Keyword">type</span>
+  <span class="Identifier">Person</span> <span class="Operator">=</span> <span class="Keyword">object</span>
+    <span class="Identifier">name</span><span class="Punctuation">:</span> <span class="Identifier">string</span>
+    <span class="Identifier">age</span><span class="Punctuation">:</span> <span class="Identifier">int</span>
+
+<span class="Keyword">var</span> <span class="Identifier">person1</span> <span class="Operator">=</span> <span class="Identifier">Person</span><span class="Punctuation">(</span><span class="Identifier">name</span><span class="Punctuation">:</span> <span class="StringLit">&quot;Peter&quot;</span><span class="Punctuation">,</span> <span class="Identifier">age</span><span class="Punctuation">:</span> <span class="DecNumber">30</span><span class="Punctuation">)</span>
+
+<span class="Identifier">echo</span> <span class="Identifier">person1</span><span class="Operator">.</span><span class="Identifier">name</span> <span class="Comment"># &quot;Peter&quot;</span>
+<span class="Identifier">echo</span> <span class="Identifier">person1</span><span class="Operator">.</span><span class="Identifier">age</span>  <span class="Comment"># 30</span>
+
+<span class="Keyword">var</span> <span class="Identifier">person2</span> <span class="Operator">=</span> <span class="Identifier">person1</span> <span class="Comment"># copy of person 1</span>
+
+<span class="Identifier">person2</span><span class="Operator">.</span><span class="Identifier">age</span> <span class="Operator">+=</span> <span class="DecNumber">14</span>
+
+<span class="Identifier">echo</span> <span class="Identifier">person1</span><span class="Operator">.</span><span class="Identifier">age</span> <span class="Comment"># 30</span>
+<span class="Identifier">echo</span> <span class="Identifier">person2</span><span class="Operator">.</span><span class="Identifier">age</span> <span class="Comment"># 44</span>
+
+
+<span class="Comment"># the order may be changed</span>
+<span class="Keyword">let</span> <span class="Identifier">person3</span> <span class="Operator">=</span> <span class="Identifier">Person</span><span class="Punctuation">(</span><span class="Identifier">age</span><span class="Punctuation">:</span> <span class="DecNumber">12</span><span class="Punctuation">,</span> <span class="Identifier">name</span><span class="Punctuation">:</span> <span class="StringLit">&quot;Quentin&quot;</span><span class="Punctuation">)</span>
+
+<span class="Comment"># not every member needs to be specified</span>
+<span class="Keyword">let</span> <span class="Identifier">person4</span> <span class="Operator">=</span> <span class="Identifier">Person</span><span class="Punctuation">(</span><span class="Identifier">age</span><span class="Punctuation">:</span> <span class="DecNumber">3</span><span class="Punctuation">)</span>
+<span class="Comment"># unspecified members will be initialized with their default</span>
+<span class="Comment"># values. In this case it is the empty string.</span>
+<span class="Identifier">doAssert</span> <span class="Identifier">person4</span><span class="Operator">.</span><span class="Identifier">name</span> <span class="Operator">==</span> <span class="StringLit">&quot;&quot;</span></pre><p>Los campos de objeto que deben ser visibles desde fuera del módulo de definición tienen que estar marcados con <tt class="docutils literal"><span class="pre">*</span></tt>.</p>
+<pre class="listing"><span class="Keyword">type</span>
+  <span class="Identifier">Person</span><span class="Operator">*</span> <span class="Operator">=</span> <span class="Keyword">object</span> <span class="Comment"># the type is visible from other modules</span>
+    <span class="Identifier">name</span><span class="Operator">*:</span> <span class="Identifier">string</span>  <span class="Comment"># the field of this type is visible from other modules</span>
+    <span class="Identifier">age</span><span class="Operator">*:</span> <span class="Identifier">int</span></pre>
+<h2 id="tuples">Tuples</h2><p>Las tuplas se parecen mucho a lo que has visto de los objetos. Son tipos de valor donde el operador de asignación copia cada componente. Sin embargo, a diferencia de los tipos de objetos, los tipos de tuplas están escritos estructuralmente, lo que significa que diferentes tipos de tuplas son <em>equivalentes</em> si especifican campos de el mismo tipo y del mismo nombre en el mismo orden.</p>
+<p>El constructor <tt class="docutils literal"><span class="pre">()</span></tt> puede usarse para construir tuplas. El orden de los campos en el constructor deben coincidir con el orden en la tupla. Pero a diferencia de los objetos, un nombre para el tipo de tupla no puede ser utilizado aquí.</p>
+<p>Al igual que el tipo de objeto, la notación <tt class="docutils literal"><span class="pre">t.field</span></tt> se usa para acceder a un campo de la tupla. Otra notación que no está disponible para objetos es <tt class="docutils literal"><span class="pre">t[i]</span></tt> para acceder al campo <tt class="docutils literal"><span class="pre">i</span></tt>. Aquí <tt class="docutils literal"><span class="pre">i</span></tt> debe ser un entero.</p>
+<pre class="listing"><span class="Keyword">type</span>
+  <span class="Comment"># type representing a person:</span>
+  <span class="Comment"># A person consists of a name and an age.</span>
+  <span class="Identifier">Person</span> <span class="Operator">=</span> <span class="Keyword">tuple</span>
+    <span class="Identifier">name</span><span class="Punctuation">:</span> <span class="Identifier">string</span>
+    <span class="Identifier">age</span><span class="Punctuation">:</span> <span class="Identifier">int</span>
+  
+  <span class="Comment"># Alternative syntax for an equivalent type.</span>
+  <span class="Identifier">PersonX</span> <span class="Operator">=</span> <span class="Keyword">tuple</span><span class="Punctuation">[</span><span class="Identifier">name</span><span class="Punctuation">:</span> <span class="Identifier">string</span><span class="Punctuation">,</span> <span class="Identifier">age</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">]</span>
+  
+  <span class="Comment"># anonymous field syntax</span>
+  <span class="Identifier">PersonY</span> <span class="Operator">=</span> <span class="Punctuation">(</span><span class="Identifier">string</span><span class="Punctuation">,</span> <span class="Identifier">int</span><span class="Punctuation">)</span>
+
+<span class="Keyword">var</span>
+  <span class="Identifier">person</span><span class="Punctuation">:</span> <span class="Identifier">Person</span>
+  <span class="Identifier">personX</span><span class="Punctuation">:</span> <span class="Identifier">PersonX</span>
+  <span class="Identifier">personY</span><span class="Punctuation">:</span> <span class="Identifier">PersonY</span>
+
+<span class="Identifier">person</span> <span class="Operator">=</span> <span class="Punctuation">(</span><span class="Identifier">name</span><span class="Punctuation">:</span> <span class="StringLit">&quot;Peter&quot;</span><span class="Punctuation">,</span> <span class="Identifier">age</span><span class="Punctuation">:</span> <span class="DecNumber">30</span><span class="Punctuation">)</span>
+<span class="Comment"># Person and PersonX are equivalent</span>
+<span class="Identifier">personX</span> <span class="Operator">=</span> <span class="Identifier">person</span>
+
+<span class="Comment"># Create a tuple with anonymous fields:</span>
+<span class="Identifier">personY</span> <span class="Operator">=</span> <span class="Punctuation">(</span><span class="StringLit">&quot;Peter&quot;</span><span class="Punctuation">,</span> <span class="DecNumber">30</span><span class="Punctuation">)</span>
+
+<span class="Comment"># A tuple with anonymous fields is compatible with a tuple that has</span>
+<span class="Comment"># field names.</span>
+<span class="Identifier">person</span> <span class="Operator">=</span> <span class="Identifier">personY</span>
+<span class="Identifier">personY</span> <span class="Operator">=</span> <span class="Identifier">person</span>
+
+<span class="Comment"># Usually used for short tuple initialization syntax</span>
+<span class="Identifier">person</span> <span class="Operator">=</span> <span class="Punctuation">(</span><span class="StringLit">&quot;Peter&quot;</span><span class="Punctuation">,</span> <span class="DecNumber">30</span><span class="Punctuation">)</span>
+
+<span class="Identifier">echo</span> <span class="Identifier">person</span><span class="Operator">.</span><span class="Identifier">name</span> <span class="Comment"># &quot;Peter&quot;</span>
+<span class="Identifier">echo</span> <span class="Identifier">person</span><span class="Operator">.</span><span class="Identifier">age</span>  <span class="Comment"># 30</span>
+
+<span class="Identifier">echo</span> <span class="Identifier">person</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span> <span class="Comment"># &quot;Peter&quot;</span>
+<span class="Identifier">echo</span> <span class="Identifier">person</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span> <span class="Comment"># 30</span>
+
+<span class="Comment"># You don't need to declare tuples in a separate type section.</span>
+<span class="Keyword">var</span> <span class="Identifier">building</span><span class="Punctuation">:</span> <span class="Keyword">tuple</span><span class="Punctuation">[</span><span class="Identifier">street</span><span class="Punctuation">:</span> <span class="Identifier">string</span><span class="Punctuation">,</span> <span class="Identifier">number</span><span class="Punctuation">:</span> <span class="Identifier">int</span><span class="Punctuation">]</span>
+<span class="Identifier">building</span> <span class="Operator">=</span> <span class="Punctuation">(</span><span class="StringLit">&quot;Rue del Percebe&quot;</span><span class="Punctuation">,</span> <span class="DecNumber">13</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">building</span><span class="Operator">.</span><span class="Identifier">street</span>
+
+<span class="Comment"># The following line does not compile, they are different tuples!</span>
+<span class="Comment">#person = building</span>
+<span class="Comment"># --&gt; Error: type mismatch: got (tuple[street: string, number: int])</span>
+<span class="Comment">#     but expected 'Person'</span></pre><p>Aunque no es necesario declarar un tipo para que una tupla lo use, las tuplas creadas con diferentes nombres de campo serán considerados objetos diferentes a pesar de tener los mismos tipos de campo.</p>
+<p>Los campos de tuplas son siempre públicos, no necesitan ser explícitamente marcados para ser exportados, a diferencia de por ejemplo, los campos en un tipo de objeto.</p>
+
+<h1 id="modulos">Modulos</h1><p>Nim admite la división de un programa en partes con un concepto de módulo. Cada módulo está en su propio archivo. Un módulo puede acceder a los símbolos de otro módulo utilizando la instrucción <tt class="docutils literal"><span class="pre">import</span></tt>. Sólo los símbolos de nivel superior que están marcados con un asterisco <tt class="docutils literal"><span class="pre">*</span></tt> se exportan.</p>
+<pre class="listing"><span class="Comment"># Modulo A</span>
+<span class="Keyword">var</span>
+  <span class="Identifier">x</span><span class="Operator">*</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">:</span> <span class="Identifier">int</span>
+
+<span class="Keyword">proc</span> <span class="Punctuation">`</span><span class="Operator">*</span><span class="Punctuation">`</span><span class="Operator">*</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">,</span> <span class="Identifier">b</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">int</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">seq</span><span class="Punctuation">[</span><span class="Identifier">int</span><span class="Punctuation">]</span> <span class="Operator">=</span>
+  <span class="Comment"># allocate a new sequence:</span>
+  <span class="Identifier">newSeq</span><span class="Punctuation">(</span><span class="Identifier">result</span><span class="Punctuation">,</span> <span class="Identifier">len</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+  <span class="Comment"># multiply two int sequences:</span>
+  <span class="Keyword">for</span> <span class="Identifier">i</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="Identifier">len</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">)</span><span class="Operator">-</span><span class="DecNumber">1</span><span class="Punctuation">:</span> <span class="Identifier">result</span><span class="Punctuation">[</span><span class="Identifier">i</span><span class="Punctuation">]</span> <span class="Operator">=</span> <span class="Identifier">a</span><span class="Punctuation">[</span><span class="Identifier">i</span><span class="Punctuation">]</span> <span class="Operator">*</span> <span class="Identifier">b</span><span class="Punctuation">[</span><span class="Identifier">i</span><span class="Punctuation">]</span>
+
+<span class="Keyword">when</span> <span class="Identifier">isMainModule</span><span class="Punctuation">:</span>
+  <span class="Comment"># test the new ``*`` operator for sequences:</span>
+  <span class="Identifier">assert</span><span class="Punctuation">(</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span> <span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="DecNumber">3</span><span class="Punctuation">]</span> <span class="Operator">*</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span> <span class="DecNumber">2</span><span class="Punctuation">,</span> <span class="DecNumber">3</span><span class="Punctuation">]</span> <span class="Operator">==</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span> <span class="DecNumber">4</span><span class="Punctuation">,</span> <span class="DecNumber">9</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre><p>El módulo anterior exporta <tt class="docutils literal"><span class="pre">x</span></tt> y <tt class="docutils literal"><span class="pre">*</span></tt>, pero no <tt class="docutils literal"><span class="pre">y</span></tt>.</p>
+<p>Las instrucciones de nivel superior de un módulo se ejecutan al inicio del programa. Esto se puede usar para inicializar estructuras de datos complejas, por ejemplo.</p>
+<p>Cada módulo tiene una constante mágica especial <tt class="docutils literal"><span class="pre">isMainModule</span></tt>, que es verdadera si el módulo se compila como el archivo principal. Esto es muy útil para incrustar pruebas dentro de el módulo como se muestra en el ejemplo anterior.</p>
+
+<h2 id="excluding-symbols">Excluding symbols</h2><p>La declaración normal <tt class="docutils literal"><span class="pre">import</span></tt> traerá todos los símbolos exportados. Estos pueden estar limitados por nombres de símbolos que deberían excluirse con el calificador <tt class="docutils literal"><span class="pre">except</span></tt>:</p>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">mymodule</span> <span class="Keyword">except</span> <span class="Identifier">y</span></pre>
+<h2 id="from-statement">From statement</h2><p>Ya hemos visto la simple declaración <tt class="docutils literal"><span class="pre">import</span></tt> que solo importa todos símbolos exportados. Una alternativa que solo importa los símbolos listados es <tt class="docutils literal"><span class="pre">from import</span></tt>:</p>
+<pre class="listing"><span class="Keyword">from</span> <span class="Identifier">mymodule</span> <span class="Keyword">import</span> <span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">,</span> <span class="Identifier">z</span></pre><p>La declaración <tt class="docutils literal"><span class="pre">from</span></tt> también puede forzar la calificación del espacio de nombres en símbolos, por lo que los símbolos están disponibles, pero necesitan ser calificados para ser utilizados.</p>
+<pre class="listing"><span class="Keyword">from</span> <span class="Identifier">mymodule</span> <span class="Keyword">import</span> <span class="Identifier">x</span><span class="Punctuation">,</span> <span class="Identifier">y</span><span class="Punctuation">,</span> <span class="Identifier">z</span>
+
+<span class="Identifier">x</span><span class="Punctuation">(</span><span class="Punctuation">)</span>           <span class="Comment"># use x without any qualification</span></pre><pre class="listing"><span class="Keyword">from</span> <span class="Identifier">mymodule</span> <span class="Keyword">import</span> <span class="Keyword">nil</span>
+
+<span class="Identifier">mymodule</span><span class="Operator">.</span><span class="Identifier">x</span><span class="Punctuation">(</span><span class="Punctuation">)</span>  <span class="Comment"># must qualify x with the module name as prefix</span>
+
+<span class="Identifier">x</span><span class="Punctuation">(</span><span class="Punctuation">)</span>           <span class="Comment"># using x here without qualification is a compile error</span></pre><p>Dado que los nombres de los módulos son generalmente largos para ser descriptivos, también puede definir un alias más corto para usar cuando califiques símbolos.</p>
+<pre class="listing"><span class="Keyword">from</span> <span class="Identifier">mymodule</span> <span class="Keyword">as</span> <span class="Identifier">m</span> <span class="Keyword">import</span> <span class="Keyword">nil</span>
+<span class="Identifier">m</span><span class="Operator">.</span><span class="Identifier">x</span><span class="Punctuation">(</span><span class="Punctuation">)</span>         <span class="Comment"># m is aliasing mymodule</span></pre>
+<h2 id="include-statement">Include statement</h2><p>La declaración <tt class="docutils literal"><span class="pre">include</span></tt> hace algo fundamentalmente diferente a importar un módulo: Simplemente incluye el contenido de un archivo. <tt class="docutils literal"><span class="pre">include</span></tt> es útil para dividir un módulo grande en varios archivos:</p>
+<pre class="listing"><span class="Keyword">include</span> <span class="Identifier">fileA</span><span class="Punctuation">,</span> <span class="Identifier">fileB</span><span class="Punctuation">,</span> <span class="Identifier">fileC</span></pre><p><strong>FIN</strong></p>
+<ul class="simple"><li>Entonces, hasta aqui hemos terminado con lo básico.</li>
+</ul>
 
 
 
@@ -1261,7 +1367,7 @@ out inside this with no indentation restrictions.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-13 23:24:22 UTC</small>
+        <small>Made with Nim. Generated: 2019-06-28 18:03:31 UTC</small>
       </div>
     </div>
   </div>
